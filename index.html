@@ -73,6 +73,7 @@
             transition: opacity 0.3s ease, transform 0.3s ease;
             pointer-events: none;
             overflow-y: auto;
+            touch-action: pan-y;
             -webkit-overflow-scrolling: touch;
             padding: 60px 80px;
         }
@@ -2785,24 +2786,32 @@
         
         // Touch/swipe support
         let touchStartX = 0;
+        let touchStartY = 0;
         let touchEndX = 0;
+        let touchEndY = 0;
         
         document.addEventListener('touchstart', (e) => {
             touchStartX = e.changedTouches[0].screenX;
+            touchStartY = e.changedTouches[0].screenY;
         }, { passive: true });
         
         document.addEventListener('touchend', (e) => {
             touchEndX = e.changedTouches[0].screenX;
+            touchEndY = e.changedTouches[0].screenY;
             handleSwipe();
         }, { passive: true });
         
         function handleSwipe() {
-            const swipeThreshold = 50;
-            if (touchEndX < touchStartX - swipeThreshold) {
-                nextSlide();
-            }
-            if (touchEndX > touchStartX + swipeThreshold) {
-                prevSlide();
+            const deltaX = touchEndX - touchStartX;
+            const deltaY = touchEndY - touchStartY;
+            const swipeThreshold = 70;
+            
+            if (Math.abs(deltaX) > Math.abs(deltaY) * 1.8 && Math.abs(deltaX) > swipeThreshold) {
+                if (deltaX < 0) {
+                    nextSlide();
+                } else {
+                    prevSlide();
+                }
             }
         }
         
