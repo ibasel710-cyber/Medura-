@@ -2633,8 +2633,8 @@
             
             // Update images and visibility
             if (variant === 1) {
-                macImg.src = 'images/doctor landing page/hero image 1.png';
-                phoneImg.src = 'images/doctor landing page/hero image 1 mobile view.jpeg';
+                macImg.src = encodeURI('images/doctor landing page/hero image 1.png');
+                phoneImg.src = encodeURI('images/doctor landing page/hero image 1 mobile view.jpeg');
                 
                 container.classList.remove('show-single');
                 container.classList.add('show-both');
@@ -2648,8 +2648,8 @@
                 macImg.parentElement.classList.remove('aspect-[1445/802]', 'aspect-[1437/780]', 'aspect-[1897/920]');
                 macImg.parentElement.classList.add('aspect-[1742/862]');
             } else if (variant === 2) {
-                macImg.src = 'images/doctor landing page/hero image 2.png';
-                phoneImg.src = 'images/doctor landing page/hero image 2 mobile view.jpeg';
+                macImg.src = encodeURI('images/doctor landing page/hero image 2.png');
+                phoneImg.src = encodeURI('images/doctor landing page/hero image 2 mobile view.jpeg');
                 
                 container.classList.remove('show-single');
                 container.classList.add('show-both');
@@ -2662,7 +2662,7 @@
                 macImg.parentElement.classList.remove('aspect-[1742/862]', 'aspect-[1437/780]', 'aspect-[1897/920]');
                 macImg.parentElement.classList.add('aspect-[1445/802]');
             } else if (variant === 3) {
-                macImg.src = 'images/doctor landing page/reservation 1.png';
+                macImg.src = encodeURI('images/doctor landing page/reservation 1.png');
                 
                 container.classList.remove('show-both');
                 container.classList.add('show-single');
@@ -2675,7 +2675,7 @@
                 macImg.parentElement.classList.remove('aspect-[1742/862]', 'aspect-[1445/802]', 'aspect-[1897/920]');
                 macImg.parentElement.classList.add('aspect-[1437/780]');
             } else if (variant === 4) {
-                macImg.src = 'images/doctor landing page/reservation page.png';
+                macImg.src = encodeURI('images/doctor landing page/reservation page.png');
                 
                 container.classList.remove('show-both');
                 container.classList.add('show-single');
@@ -2714,8 +2714,8 @@
             
             // Update images and visibility
             if (variant === 1) {
-                macImg.src = 'images/recptionist dashboard/reception dashboard.png';
-                phoneImg.src = 'images/recptionist dashboard/payment from the receptionist.jpeg';
+                macImg.src = encodeURI('images/recptionist dashboard/reception dashboard.png');
+                phoneImg.src = encodeURI('images/recptionist dashboard/payment from the receptionist.jpeg');
                 
                 container.classList.remove('show-single');
                 container.classList.add('show-both');
@@ -2726,7 +2726,7 @@
                 macWrapper.style.transform = '';
                 
             } else if (variant === 2) {
-                macImg.src = 'images/recptionist dashboard/invoicment.png';
+                macImg.src = encodeURI('images/recptionist dashboard/invoicment.png');
                 
                 container.classList.remove('show-both');
                 container.classList.add('show-single');
@@ -2789,12 +2789,24 @@
         let touchStartY = 0;
         let touchEndX = 0;
         let touchEndY = 0;
+        let isMultiTouch = false;
         
         document.addEventListener('touchstart', (e) => {
+            if (e.touches.length > 1) {
+                isMultiTouch = true;
+            } else {
+                isMultiTouch = false;
+            }
             touchStartX = e.changedTouches[0].screenX;
             touchStartY = e.changedTouches[0].screenY;
         }, { passive: true });
         
+        document.addEventListener('touchmove', (e) => {
+            if (e.touches.length > 1) {
+                isMultiTouch = true;
+            }
+        }, { passive: true });
+
         document.addEventListener('touchend', (e) => {
             touchEndX = e.changedTouches[0].screenX;
             touchEndY = e.changedTouches[0].screenY;
@@ -2802,11 +2814,21 @@
         }, { passive: true });
         
         function handleSwipe() {
+            // Ignore swipe navigation if user is zoomed in
+            if (window.visualViewport && window.visualViewport.scale > 1.05) {
+                return;
+            }
+            
+            // Ignore swipe navigation if gesture was multi-touch / pinch
+            if (isMultiTouch) {
+                return;
+            }
+
             const deltaX = touchEndX - touchStartX;
             const deltaY = touchEndY - touchStartY;
-            const swipeThreshold = 70;
+            const swipeThreshold = 100;
             
-            if (Math.abs(deltaX) > Math.abs(deltaY) * 1.8 && Math.abs(deltaX) > swipeThreshold) {
+            if (Math.abs(deltaX) > Math.abs(deltaY) * 2.5 && Math.abs(deltaX) > swipeThreshold) {
                 if (deltaX < 0) {
                     nextSlide();
                 } else {
