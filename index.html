@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>Medura Hub — Clinic Operating System</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
@@ -73,7 +73,7 @@
             transition: opacity 0.3s ease, transform 0.3s ease;
             pointer-events: none;
             overflow-y: auto;
-            touch-action: pan-y;
+            touch-action: manipulation;
             -webkit-overflow-scrolling: touch;
             padding: 60px 80px;
         }
@@ -641,9 +641,17 @@
     
     <!-- Logo -->
     <div class="logo-container">
-        <img src="https://z-cdn-media.chatglm.cn/files/b86c719a-2c36-4767-b2bc-8a62abbe919c.png?auth_key=1883699063-e5cf5ce77c7a4b48bee507b93f63e72c-0-443137886a4d79f58eddd2c34c0dbc98" 
-             alt="Medura Hub" 
-             style="height: 40px; filter: brightness(1.2);">
+        <svg class="h-10 w-auto" viewBox="0 0 210 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="40" height="40" y="2" rx="10" fill="url(#logo-grad-nav)"/>
+            <path d="M10 22H15.5L18.5 14L22.5 30L25.5 22H30" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <text x="50" y="29" font-family="'Inter', sans-serif" font-weight="700" font-size="22" fill="#EDE7DC" letter-spacing="-0.02em">Medura<tspan fill="#C8A1E0">Hub</tspan></text>
+            <defs>
+                <linearGradient id="logo-grad-nav" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#8E6BAE"/>
+                    <stop offset="1" stop-color="#4E3268"/>
+                </linearGradient>
+            </defs>
+        </svg>
     </div>
     
     <!-- Slide Number -->
@@ -666,9 +674,17 @@
         <div class="slide active" data-slide="1">
             <div class="flex flex-col items-center justify-center h-full text-center">
                 <div class="float-animation mb-10">
-                    <img src="https://z-cdn-media.chatglm.cn/files/b86c719a-2c36-4767-b2bc-8a62abbe919c.png?auth_key=1883699063-e5cf5ce77c7a4b48bee507b93f63e72c-0-443137886a4d79f58eddd2c34c0dbc98"
-                         alt="Medura Hub"
-                         style="height: 100px; filter: brightness(1.3);">
+                    <svg class="h-20 w-auto" viewBox="0 0 240 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="56" height="56" y="2" rx="14" fill="url(#logo-grad-hero)"/>
+                        <path d="M14 30H21.5L25.5 19L31.5 41L35.5 30H42" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <text x="70" y="41" font-family="'Inter', sans-serif" font-weight="800" font-size="32" fill="#EDE7DC" letter-spacing="-0.03em">Medura<tspan fill="#C8A1E0">Hub</tspan></text>
+                        <defs>
+                            <linearGradient id="logo-grad-hero" x1="0" y1="0" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#8E6BAE"/>
+                                <stop offset="1" stop-color="#4E3268"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
                 </div>
                 <p class="section-label justify-center">
                     <iconify-icon icon="lucide:activity"></iconify-icon>
@@ -2488,9 +2504,17 @@
         <!-- SLIDE 27 - CTA -->
         <div class="slide" data-slide="27">
             <div class="flex flex-col items-center justify-center h-full text-center">
-                <img src="https://z-cdn-media.chatglm.cn/files/b86c719a-2c36-4767-b2bc-8a62abbe919c.png?auth_key=1883699063-e5cf5ce77c7a4b48bee507b93f63e72c-0-443137886a4d79f58eddd2c34c0dbc98" 
-                     alt="Medura Hub" 
-                     class="h-20 mb-10 filter brightness-1.2">
+                <svg class="h-16 w-auto mb-10" viewBox="0 0 240 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="56" height="56" y="2" rx="14" fill="url(#logo-grad-cta)"/>
+                    <path d="M14 30H21.5L25.5 19L31.5 41L35.5 30H42" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <text x="70" y="41" font-family="'Inter', sans-serif" font-weight="800" font-size="32" fill="#EDE7DC" letter-spacing="-0.03em">Medura<tspan fill="#C8A1E0">Hub</tspan></text>
+                    <defs>
+                        <linearGradient id="logo-grad-cta" x1="0" y1="0" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#8E6BAE"/>
+                            <stop offset="1" stop-color="#4E3268"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
                 
                 <h2 class="font-serif text-5xl md:text-6xl font-bold mb-8 leading-tight">
                     Ready to Run Your Clinic —<br>
@@ -2555,8 +2579,8 @@
 
         const deviceVariants = [
             {
-                browser: 'images/doctor%20landing%20page/hero%20image%201.png',
-                phone: 'images/doctor%20landing%20page/hero%20image%201%20mobile%20view.jpeg',
+                browser: 'images/doctor landing page/hero image 1.png',
+                phone: 'images/doctor landing page/hero image 1 mobile view.jpeg',
                 phonePos: 'center top',
                 phoneZoom: 1.12,
                 phoneOrigin: '50% 12%',
@@ -2565,8 +2589,8 @@
                 label: 'Clinic homepage'
             },
             {
-                browser: 'images/doctor%20landing%20page/hero%20image%202.png',
-                phone: 'images/doctor%20landing%20page/hero%20image%202%20mobile%20view.jpeg',
+                browser: 'images/doctor landing page/hero image 2.png',
+                phone: 'images/doctor landing page/hero image 2 mobile view.jpeg',
                 phonePos: 'center top',
                 phoneZoom: 1.38,
                 phoneOrigin: '50% 20%',
@@ -2575,8 +2599,8 @@
                 label: 'Doctor profile layout'
             },
             {
-                browser: 'images/doctor%20landing%20page/reservation%201.png',
-                phone: 'images/doctor%20landing%20page/reservation%20page.png',
+                browser: 'images/doctor landing page/reservation 1.png',
+                phone: 'images/doctor landing page/reservation page.png',
                 phonePos: '91% 46%',
                 phoneZoom: 2.3,
                 phoneOrigin: '50% 50%',
@@ -2633,8 +2657,8 @@
             
             // Update images and visibility
             if (variant === 1) {
-                macImg.src = 'images/doctor%20landing%20page/hero%20image%201.png';
-                phoneImg.src = 'images/doctor%20landing%20page/hero%20image%201%20mobile%20view.jpeg';
+                macImg.src = 'images/doctor landing page/hero image 1.png';
+                phoneImg.src = 'images/doctor landing page/hero image 1 mobile view.jpeg';
                 
                 container.classList.remove('show-single');
                 container.classList.add('show-both');
@@ -2648,8 +2672,8 @@
                 macImg.parentElement.classList.remove('aspect-[1445/802]', 'aspect-[1437/780]', 'aspect-[1897/920]');
                 macImg.parentElement.classList.add('aspect-[1742/862]');
             } else if (variant === 2) {
-                macImg.src = 'images/doctor%20landing%20page/hero%20image%202.png';
-                phoneImg.src = 'images/doctor%20landing%20page/hero%20image%202%20mobile%20view.jpeg';
+                macImg.src = 'images/doctor landing page/hero image 2.png';
+                phoneImg.src = 'images/doctor landing page/hero image 2 mobile view.jpeg';
                 
                 container.classList.remove('show-single');
                 container.classList.add('show-both');
@@ -2662,7 +2686,7 @@
                 macImg.parentElement.classList.remove('aspect-[1742/862]', 'aspect-[1437/780]', 'aspect-[1897/920]');
                 macImg.parentElement.classList.add('aspect-[1445/802]');
             } else if (variant === 3) {
-                macImg.src = 'images/doctor%20landing%20page/reservation%201.png';
+                macImg.src = 'images/doctor landing page/reservation 1.png';
                 
                 container.classList.remove('show-both');
                 container.classList.add('show-single');
@@ -2675,7 +2699,7 @@
                 macImg.parentElement.classList.remove('aspect-[1742/862]', 'aspect-[1445/802]', 'aspect-[1897/920]');
                 macImg.parentElement.classList.add('aspect-[1437/780]');
             } else if (variant === 4) {
-                macImg.src = 'images/doctor%20landing%20page/reservation%20page.png';
+                macImg.src = 'images/doctor landing page/reservation page.png';
                 
                 container.classList.remove('show-both');
                 container.classList.add('show-single');
@@ -2714,8 +2738,8 @@
             
             // Update images and visibility
             if (variant === 1) {
-                macImg.src = 'images/recptionist%20dashboard/reception%20dashboard.png';
-                phoneImg.src = 'images/recptionist%20dashboard/payment%20from%20the%20receptionist.jpeg';
+                macImg.src = 'images/recptionist dashboard/reception dashboard.png';
+                phoneImg.src = 'images/recptionist dashboard/payment from the receptionist.jpeg';
                 
                 container.classList.remove('show-single');
                 container.classList.add('show-both');
@@ -2726,7 +2750,7 @@
                 macWrapper.style.transform = '';
                 
             } else if (variant === 2) {
-                macImg.src = 'images/recptionist%20dashboard/invoicment.png';
+                macImg.src = 'images/recptionist dashboard/invoicment.png';
                 
                 container.classList.remove('show-both');
                 container.classList.add('show-single');
