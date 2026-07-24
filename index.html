@@ -611,6 +611,44 @@
                 font-size: 1.75rem !important;
                 line-height: 1.25 !important;
             }
+
+            /* Slides 6 & 7 — device mockup stage: the laptop+phone composite is
+               built from fixed-px widths (540/460/170) for the desktop layout.
+               Rebuild it fluid here instead of shrinking the whole slide. */
+            div.device-showcase {
+                min-height: 0;
+            }
+
+            div.device-showcase .flex.justify-center.gap-2.mb-6 {
+                gap: 4px;
+            }
+
+            div.device-showcase .flex.justify-center.gap-2.mb-6 button {
+                font-size: 9.5px;
+                padding-left: 2px;
+                padding-right: 2px;
+            }
+
+            #devices-container,
+            #reception-devices-container {
+                width: 100%;
+                max-width: 300px;
+                height: auto;
+                aspect-ratio: 540 / 340;
+                margin-top: 28px;
+            }
+
+            #macbook-wrapper,
+            #reception-macbook-wrapper {
+                width: 85.2%;
+                top: 4%;
+            }
+
+            #iphone-wrapper,
+            #reception-iphone-wrapper {
+                width: 31.5%;
+                bottom: -6%;
+            }
         }
 
         .mockup-layer {
@@ -1037,8 +1075,8 @@
                     </div>
                     
                     <!-- Right Column: Premium Interactive Mockups (6 cols) -->
-                    <div class="lg:col-span-6 relative flex flex-col items-center justify-center min-h-[420px] mt-8 lg:mt-0">
-                        
+                    <div class="lg:col-span-6 relative flex flex-col items-center justify-center min-h-[420px] mt-8 lg:mt-0 device-showcase">
+
                         <!-- Variation Switcher Tabs -->
                         <div class="flex justify-center gap-2 mb-6 w-full max-w-[440px] z-30">
                             <button id="mockup-tab-1" onclick="switchMockup(1)" class="mockup-tab-btn flex-1 py-2 px-1 rounded-lg border text-[11px] font-mono bg-purple-600/30 border-purple-400 text-white font-medium shadow-md transition-all">
@@ -1073,7 +1111,7 @@
                                     <!-- Screen display area -->
                                     <div class="relative w-full aspect-[1742/862] bg-neutral-950 rounded overflow-hidden group">
                                         <img id="macbook-screen-img" 
-                                             src="images/doctor%20landing%20page/hero%20image%201.png" 
+                                             src="../images/doctor%20landing%20page/hero%20image%201.png" 
                                              class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]" 
                                              alt="Doctor Landing Page Desktop">
                                         <!-- Glare effect -->
@@ -1104,7 +1142,7 @@
                                     <!-- Screen Display Area -->
                                     <div class="w-full h-full bg-neutral-950 rounded-[1.95rem] overflow-hidden relative group">
                                         <img id="iphone-screen-img" 
-                                             src="images/doctor%20landing%20page/hero%20image%201%20mobile%20view.jpeg" 
+                                             src="../images/doctor%20landing%20page/hero%20image%201%20mobile%20view.jpeg" 
                                              class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]" 
                                              alt="Doctor Landing Page Mobile">
                                         <!-- Glare overlay -->
@@ -1192,8 +1230,8 @@
                     </div>
                     
                     <!-- Right Column: Premium Interactive Mockups (6 cols) -->
-                    <div class="lg:col-span-6 relative flex flex-col items-center justify-center min-h-[420px] mt-8 lg:mt-0">
-                        
+                    <div class="lg:col-span-6 relative flex flex-col items-center justify-center min-h-[420px] mt-8 lg:mt-0 device-showcase">
+
                         <!-- Variation Switcher Tabs -->
                         <div class="flex justify-center gap-2 mb-6 w-full max-w-[440px] z-30">
                             <button id="reception-mockup-tab-1" onclick="switchReceptionMockup(1)" class="reception-mockup-tab-btn flex-1 py-2 px-1 rounded-lg border text-[11px] font-mono bg-purple-600/30 border-purple-400 text-white font-medium shadow-md transition-all">
@@ -1222,7 +1260,7 @@
                                     <!-- Screen display area -->
                                     <div class="relative w-full aspect-[1917/918] bg-neutral-950 rounded overflow-hidden group/screen">
                                         <img id="reception-macbook-screen-img" 
-                                             src="images/recptionist%20dashboard/reception%20dashboard.png" 
+                                             src="../images/recptionist%20dashboard/reception%20dashboard.png" 
                                              class="w-full h-auto absolute top-0 left-0 transition-transform duration-[6000ms] ease-in-out object-top cursor-ns-resize" 
                                              alt="Reception Queue Dashboard Desktop">
                                         <!-- Glare effect -->
@@ -1253,7 +1291,7 @@
                                     <!-- Screen Display Area -->
                                     <div class="w-full h-full bg-neutral-950 rounded-[1.95rem] overflow-hidden relative group">
                                         <img id="reception-iphone-screen-img" 
-                                             src="images/recptionist%20dashboard/payment%20from%20the%20receptionist.jpeg" 
+                                             src="../images/recptionist%20dashboard/payment%20from%20the%20receptionist.jpeg" 
                                              class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]" 
                                              alt="Payment from Receptionist Mobile">
                                         <!-- Glare overlay -->
@@ -2602,8 +2640,8 @@
 
         const deviceVariants = [
             {
-                browser: 'images/doctor landing page/hero image 1.png',
-                phone: 'images/doctor landing page/hero image 1 mobile view.jpeg',
+                browser: '../images/doctor landing page/hero image 1.png',
+                phone: '../images/doctor landing page/hero image 1 mobile view.jpeg',
                 phonePos: 'center top',
                 phoneZoom: 1.12,
                 phoneOrigin: '50% 12%',
@@ -2612,8 +2650,8 @@
                 label: 'Clinic homepage'
             },
             {
-                browser: 'images/doctor landing page/hero image 2.png',
-                phone: 'images/doctor landing page/hero image 2 mobile view.jpeg',
+                browser: '../images/doctor landing page/hero image 2.png',
+                phone: '../images/doctor landing page/hero image 2 mobile view.jpeg',
                 phonePos: 'center top',
                 phoneZoom: 1.38,
                 phoneOrigin: '50% 20%',
@@ -2622,8 +2660,8 @@
                 label: 'Doctor profile layout'
             },
             {
-                browser: 'images/doctor landing page/reservation 1.png',
-                phone: 'images/doctor landing page/reservation page.png',
+                browser: '../images/doctor landing page/reservation 1.png',
+                phone: '../images/doctor landing page/reservation page.png',
                 phonePos: '91% 46%',
                 phoneZoom: 2.3,
                 phoneOrigin: '50% 50%',
@@ -2680,8 +2718,8 @@
             
             // Update images and visibility
             if (variant === 1) {
-                macImg.src = encodeURI('images/doctor landing page/hero image 1.png');
-                phoneImg.src = encodeURI('images/doctor landing page/hero image 1 mobile view.jpeg');
+                macImg.src = encodeURI('../images/doctor landing page/hero image 1.png');
+                phoneImg.src = encodeURI('../images/doctor landing page/hero image 1 mobile view.jpeg');
                 
                 container.classList.remove('show-single');
                 container.classList.add('show-both');
@@ -2695,8 +2733,8 @@
                 macImg.parentElement.classList.remove('aspect-[1445/802]', 'aspect-[1437/780]', 'aspect-[1897/920]');
                 macImg.parentElement.classList.add('aspect-[1742/862]');
             } else if (variant === 2) {
-                macImg.src = encodeURI('images/doctor landing page/hero image 2.png');
-                phoneImg.src = encodeURI('images/doctor landing page/hero image 2 mobile view.jpeg');
+                macImg.src = encodeURI('../images/doctor landing page/hero image 2.png');
+                phoneImg.src = encodeURI('../images/doctor landing page/hero image 2 mobile view.jpeg');
                 
                 container.classList.remove('show-single');
                 container.classList.add('show-both');
@@ -2709,7 +2747,7 @@
                 macImg.parentElement.classList.remove('aspect-[1742/862]', 'aspect-[1437/780]', 'aspect-[1897/920]');
                 macImg.parentElement.classList.add('aspect-[1445/802]');
             } else if (variant === 3) {
-                macImg.src = encodeURI('images/doctor landing page/reservation 1.png');
+                macImg.src = encodeURI('../images/doctor landing page/reservation 1.png');
                 
                 container.classList.remove('show-both');
                 container.classList.add('show-single');
@@ -2722,7 +2760,7 @@
                 macImg.parentElement.classList.remove('aspect-[1742/862]', 'aspect-[1445/802]', 'aspect-[1897/920]');
                 macImg.parentElement.classList.add('aspect-[1437/780]');
             } else if (variant === 4) {
-                macImg.src = encodeURI('images/doctor landing page/reservation page.png');
+                macImg.src = encodeURI('../images/doctor landing page/reservation page.png');
                 
                 container.classList.remove('show-both');
                 container.classList.add('show-single');
@@ -2761,8 +2799,8 @@
             
             // Update images and visibility
             if (variant === 1) {
-                macImg.src = encodeURI('images/recptionist dashboard/reception dashboard.png');
-                phoneImg.src = encodeURI('images/recptionist dashboard/payment from the receptionist.jpeg');
+                macImg.src = encodeURI('../images/recptionist dashboard/reception dashboard.png');
+                phoneImg.src = encodeURI('../images/recptionist dashboard/payment from the receptionist.jpeg');
                 
                 container.classList.remove('show-single');
                 container.classList.add('show-both');
@@ -2773,7 +2811,7 @@
                 macWrapper.style.transform = '';
                 
             } else if (variant === 2) {
-                macImg.src = encodeURI('images/recptionist dashboard/invoicment.png');
+                macImg.src = encodeURI('../images/recptionist dashboard/invoicment.png');
                 
                 container.classList.remove('show-both');
                 container.classList.add('show-single');
