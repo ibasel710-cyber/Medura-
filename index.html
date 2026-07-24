@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <title>Medura Hub — Clinic Operating System</title>
+    <title>Medura Hub — Clinic Operating System (Light Edition)</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,400;1,9..144,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -13,23 +13,23 @@
                 extend: {
                     colors: {
                         purple: {
-                            50: '#F6F2EB',
-                            100: '#EAE3D6',
-                            200: '#D7CFC0',
-                            300: '#B7A8B0',
-                            400: '#96829C',
-                            500: '#7C5A96',
-                            600: '#674188',
-                            700: '#4E3268',
-                            800: '#3B2650',
-                            900: '#2A1B38',
-                            950: '#190F22'
+                            50: '#FAF6FF',
+                            100: '#F3EAFB',
+                            200: '#E4D3F5',
+                            300: '#9B68C4',
+                            400: '#7E41AF',
+                            500: '#674188',
+                            600: '#522E75',
+                            700: '#3D1F5B',
+                            800: '#2A1B38',
+                            900: '#190F22',
+                            950: '#0D0714'
                         },
                         dark: {
-                            900: '#120E19',
-                            800: '#1B1424',
-                            700: '#241A30',
-                            600: '#2E2140'
+                            900: '#FAF8FC',
+                            800: '#FFFFFF',
+                            700: '#F4EFF9',
+                            600: '#EADFF2'
                         }
                     },
                     fontFamily: {
@@ -46,8 +46,8 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background: #120E19;
-            color: #EDE7DC;
+            background: #FAF8FC;
+            color: #1E1629;
             overflow: hidden;
             height: 100vh;
             height: 100dvh;
@@ -92,14 +92,14 @@
         }
         
         .gradient-text {
-            background: linear-gradient(120deg, #D9C2E8 0%, #8E6BAE 45%, #674188 100%);
+            background: linear-gradient(120deg, #3D1F5B 0%, #674188 45%, #8E6BAE 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
         .gradient-text-duo {
-            background: linear-gradient(100deg, #C8A1E0 0%, #8E6BAE 45%, #4E3268 100%);
+            background: linear-gradient(100deg, #2A1B38 0%, #674188 45%, #7E41AF 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -107,8 +107,9 @@
 
         .gradient-border {
             position: relative;
-            background: rgba(237, 231, 220, 0.03);
-            border: 1px solid rgba(237, 231, 220, 0.12);
+            background: #FFFFFF;
+            border: 1px solid rgba(103, 65, 136, 0.14);
+            box-shadow: 0 10px 25px -5px rgba(42, 27, 56, 0.05), 0 4px 12px -2px rgba(103, 65, 136, 0.03);
         }
 
         .gradient-border::before {
@@ -117,7 +118,7 @@
             inset: 0;
             border-radius: inherit;
             padding: 1px;
-            background: linear-gradient(135deg, rgba(142, 107, 174, 0.28), rgba(237, 231, 220, 0.06), rgba(103, 65, 136, 0.28));
+            background: linear-gradient(135deg, rgba(103, 65, 136, 0.25), rgba(230, 220, 242, 0.5), rgba(126, 65, 175, 0.25));
             -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
             mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
             -webkit-mask-composite: xor;
@@ -125,7 +126,7 @@
         }
 
         .glow-purple {
-            box-shadow: 0 0 40px rgba(103, 65, 136, 0.28), 0 0 80px rgba(74, 46, 99, 0.14);
+            box-shadow: 0 10px 35px rgba(103, 65, 136, 0.12), 0 0 60px rgba(142, 107, 174, 0.08);
         }
 
         .card-hover {
@@ -134,8 +135,8 @@
 
         .card-hover:hover {
             transform: translateY(-4px);
-            border-color: rgba(142, 107, 174, 0.55);
-            box-shadow: 0 20px 40px rgba(103, 65, 136, 0.18);
+            border-color: rgba(126, 65, 175, 0.45);
+            box-shadow: 0 20px 40px -10px rgba(103, 65, 136, 0.15);
         }
 
         .feature-grid {
@@ -143,23 +144,24 @@
             gap: 20px;
         }
 
-        /* "Old way" — the mono, before-color world */
+        /* "Old way" — problem area in light mode */
         .pain-box {
-            background: rgba(244, 238, 230, 0.02);
-            border: 1px dashed rgba(217, 169, 142, 0.35);
-            border-left: 3px solid rgba(178, 58, 34, 0.55);
-            border-radius: 4px;
+            background: #FFF5F5;
+            border: 1px dashed rgba(220, 38, 38, 0.3);
+            border-left: 4px solid #DC2626;
+            border-radius: 8px;
             padding: 22px 24px;
-            filter: grayscale(0.55);
+            color: #450A0A;
         }
 
-        /* "Medura Hub" — the clinical, in-color world */
+        /* "Medura Hub" — solution box in light mode */
         .solution-box {
-            background: linear-gradient(135deg, rgba(103, 65, 136, 0.14), rgba(103, 65, 136, 0.04));
-            border: 1px solid rgba(142, 107, 174, 0.3);
-            border-left: 3px solid #8E6BAE;
-            border-radius: 4px;
+            background: linear-gradient(135deg, #F5EEFC 0%, #EDE2F8 100%);
+            border: 1px solid rgba(126, 65, 175, 0.3);
+            border-left: 4px solid #674188;
+            border-radius: 8px;
             padding: 22px 24px;
+            color: #190F22;
         }
 
         .progress-bar {
@@ -168,13 +170,13 @@
             left: 0;
             height: 10px;
             background-color: transparent;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="36" height="10" viewBox="0 0 36 10"><path d="M0 5 H12 L15.5 0.8 L19.5 9.2 L23 5 H36" fill="none" stroke="%238E6BAE" stroke-width="1.6"/></svg>');
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="36" height="10" viewBox="0 0 36 10"><path d="M0 5 H12 L15.5 0.8 L19.5 9.2 L23 5 H36" fill="none" stroke="%23674188" stroke-width="1.8"/></svg>');
             background-repeat: repeat-x;
             background-size: 36px 10px;
             background-position: left center;
             transition: width 0.3s ease;
             z-index: 100;
-            opacity: 0.9;
+            opacity: 0.95;
         }
 
         .slide-number {
@@ -184,9 +186,15 @@
             font-family: 'IBM Plex Mono', monospace;
             font-size: 13px;
             letter-spacing: 0.08em;
-            color: rgba(244, 238, 230, 0.45);
+            color: #522E75;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(8px);
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid rgba(103, 65, 136, 0.18);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
             z-index: 50;
-            font-weight: 500;
+            font-weight: 600;
         }
 
         .nav-controls {
@@ -203,9 +211,10 @@
             width: 48px;
             height: 48px;
             border-radius: 50%;
-            background: rgba(237, 231, 220, 0.04);
-            border: 1px solid rgba(237, 231, 220, 0.15);
-            color: #EDE7DC;
+            background: #FFFFFF;
+            border: 1px solid rgba(103, 65, 136, 0.2);
+            color: #2A1B38;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -214,13 +223,19 @@
         }
 
         .nav-btn:hover {
-            background: rgba(142, 107, 174, 0.2);
-            border-color: rgba(142, 107, 174, 0.55);
+            background: #674188;
+            border-color: #674188;
+            color: #FFFFFF;
+            box-shadow: 0 6px 20px rgba(103, 65, 136, 0.25);
         }
 
         .nav-btn:disabled {
-            opacity: 0.3;
+            opacity: 0.35;
             cursor: not-allowed;
+            background: #F1ECF7;
+            border-color: rgba(103, 65, 136, 0.1);
+            color: #96829C;
+            box-shadow: none;
         }
 
         .logo-container {
@@ -228,6 +243,9 @@
             top: 24px;
             left: 40px;
             z-index: 50;
+            display: flex;
+            align-items: center;
+            gap: 16px;
         }
 
         .section-label {
@@ -236,11 +254,15 @@
             gap: 10px;
             font-family: 'IBM Plex Mono', monospace;
             font-size: 12px;
-            font-weight: 500;
+            font-weight: 600;
             letter-spacing: 0.16em;
             text-transform: uppercase;
-            color: #C8A1E0;
-            margin-bottom: 26px;
+            color: #674188;
+            background: rgba(103, 65, 136, 0.08);
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid rgba(103, 65, 136, 0.15);
+            margin-bottom: 24px;
         }
 
         .section-label::before {
@@ -248,7 +270,7 @@
             width: 7px;
             height: 7px;
             border-radius: 50%;
-            background: #8E6BAE;
+            background: #674188;
             flex-shrink: 0;
             animation: live-pulse 2.4s ease-in-out infinite;
         }
@@ -258,8 +280,8 @@
         }
 
         @keyframes live-pulse {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(142, 107, 174, 0.5); }
-            50% { box-shadow: 0 0 0 5px rgba(142, 107, 174, 0); }
+            0%, 100% { box-shadow: 0 0 0 0 rgba(103, 65, 136, 0.5); }
+            50% { box-shadow: 0 0 0 6px rgba(103, 65, 136, 0); }
         }
 
         .table-custom {
@@ -269,16 +291,16 @@
         }
 
         .table-custom th {
-            background: rgba(237, 231, 220, 0.05);
+            background: #F3EAFB;
             padding: 16px 20px;
             text-align: left;
             font-family: 'IBM Plex Mono', monospace;
-            font-weight: 500;
+            font-weight: 600;
             font-size: 12px;
             letter-spacing: 0.08em;
             text-transform: uppercase;
-            color: #D7CFC0;
-            border-bottom: 1px solid rgba(237, 231, 220, 0.15);
+            color: #2A1B38;
+            border-bottom: 2px solid rgba(103, 65, 136, 0.18);
         }
 
         .table-custom th:first-child { border-radius: 12px 0 0 0; }
@@ -286,56 +308,54 @@
 
         .table-custom td {
             padding: 14px 20px;
-            border-bottom: 1px solid rgba(244, 238, 230, 0.06);
+            border-bottom: 1px solid rgba(103, 65, 136, 0.1);
             font-size: 14px;
+            color: #190F22;
         }
 
         .table-custom tr:last-child td { border-bottom: none; }
         .table-custom tr:last-child td:first-child { border-radius: 0 0 0 12px; }
         .table-custom tr:last-child td:last-child { border-radius: 0 0 12px 0; }
 
-        .table-check { color: #C8A1E0; }
-        .table-cross { color: rgba(215, 207, 192, 0.35); }
-        .table-partial { color: #B7A8B0; }
+        .table-check { color: #674188; font-weight: bold; }
+        .table-cross { color: #A89CB0; }
+        .table-partial { color: #7C5A96; }
 
         .pricing-card {
-            background: rgba(237, 231, 220, 0.02);
-            border: 1px solid rgba(237, 231, 220, 0.15);
+            background: #FFFFFF;
+            border: 1px solid rgba(103, 65, 136, 0.16);
             border-radius: 24px;
             padding: 40px 32px;
             transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(42, 27, 56, 0.04);
         }
 
         .pricing-card.featured {
-            background: linear-gradient(135deg, rgba(103, 65, 136, 0.18), rgba(103, 65, 136, 0.06));
-            border-color: rgba(142, 107, 174, 0.55);
+            background: linear-gradient(135deg, #FAF4FF 0%, #F1E4FA 100%);
+            border: 2px solid #674188;
             transform: scale(1.02);
+            box-shadow: 0 20px 45px -10px rgba(103, 65, 136, 0.2);
         }
 
         .pricing-card:hover {
-            border-color: rgba(142, 107, 174, 0.5);
-            box-shadow: 0 20px 60px rgba(103, 65, 136, 0.22);
+            border-color: #674188;
+            box-shadow: 0 20px 50px rgba(103, 65, 136, 0.18);
         }
 
         .bg-grid {
             background-image:
-                linear-gradient(rgba(237, 231, 220, 0.02) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(237, 231, 220, 0.02) 1px, transparent 1px);
+                linear-gradient(rgba(103, 65, 136, 0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(103, 65, 136, 0.04) 1px, transparent 1px);
             background-size: 60px 60px;
         }
 
         @keyframes float {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
+            50% { transform: translateY(-16px); }
         }
 
         .float-animation {
             animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes pulse-glow {
-            0%, 100% { box-shadow: 0 0 20px rgba(142, 107, 174, 0.3); }
-            50% { box-shadow: 0 0 40px rgba(142, 107, 174, 0.5); }
         }
 
         /* Product proof — real screens, staged like a keynote product shot */
@@ -347,17 +367,18 @@
             width: 100%;
             padding: 22px 30px 0;
             border-radius: 22px;
-            background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(103, 65, 136, 0.18), transparent 70%), rgba(237, 231, 220, 0.02);
-            border: 1px solid rgba(237, 231, 220, 0.08);
+            background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(103, 65, 136, 0.08), transparent 70%), #FFFFFF;
+            border: 1px solid rgba(103, 65, 136, 0.15);
+            box-shadow: 0 15px 35px rgba(42, 27, 56, 0.06);
         }
 
         .browser-frame {
             width: 100%;
             border-radius: 14px;
             overflow: hidden;
-            background: #1B1424;
-            border: 1px solid rgba(237, 231, 220, 0.12);
-            box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.65), 0 0 70px rgba(103, 65, 136, 0.18);
+            background: #FFFFFF;
+            border: 1px solid rgba(103, 65, 136, 0.2);
+            box-shadow: 0 30px 60px -15px rgba(25, 15, 34, 0.15), 0 0 30px rgba(103, 65, 136, 0.08);
         }
 
         .browser-frame .chrome-bar {
@@ -365,35 +386,36 @@
             align-items: center;
             gap: 6px;
             padding: 10px 14px;
-            background: rgba(237, 231, 220, 0.03);
-            border-bottom: 1px solid rgba(237, 231, 220, 0.08);
+            background: #F1ECF7;
+            border-bottom: 1px solid rgba(103, 65, 136, 0.12);
         }
 
         .browser-frame .chrome-dot {
             width: 8px;
             height: 8px;
             border-radius: 50%;
-            background: rgba(237, 231, 220, 0.18);
+            background: rgba(103, 65, 136, 0.25);
         }
 
         .browser-frame .chrome-url {
             margin-left: 10px;
             flex: 1;
-            background: rgba(237, 231, 220, 0.05);
+            background: #FFFFFF;
             border-radius: 6px;
             padding: 4px 12px;
             font-family: 'IBM Plex Mono', monospace;
             font-size: 10.5px;
             letter-spacing: 0.02em;
-            color: rgba(237, 231, 220, 0.45);
+            color: #522E75;
             text-align: center;
+            border: 1px solid rgba(103, 65, 136, 0.1);
         }
 
         .browser-frame .frame-media {
             width: 100%;
             aspect-ratio: 16 / 9.6;
             overflow: hidden;
-            background: #0E0B14;
+            background: #FAF8FC;
         }
 
         .browser-frame .frame-media img {
@@ -414,9 +436,9 @@
             margin-right: 8%;
             border-radius: 26px;
             padding: 7px;
-            background: #241A30;
-            border: 1px solid rgba(237, 231, 220, 0.15);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.65), 0 0 40px rgba(103, 65, 136, 0.2);
+            background: #190F22;
+            border: 2px solid #E2E8F0;
+            box-shadow: 0 25px 50px -12px rgba(25, 15, 34, 0.25), 0 0 30px rgba(103, 65, 136, 0.12);
             transform: rotate(-3deg);
         }
 
@@ -426,7 +448,7 @@
             aspect-ratio: 9 / 18.5;
             border-radius: 19px;
             overflow: hidden;
-            background: #0E0B14;
+            background: #FAF8FC;
         }
 
         .phone-frame .frame-media::before {
@@ -438,7 +460,7 @@
             width: 36%;
             height: 12px;
             border-radius: 7px;
-            background: #241A30;
+            background: #190F22;
             z-index: 2;
         }
 
@@ -453,7 +475,6 @@
             transition: object-position 0.2s ease, transform 0.2s ease;
         }
 
-        /* Point at either device to bring it in front of the other */
         .browser-frame,
         .phone-frame {
             position: relative;
@@ -469,7 +490,7 @@
         .browser-frame:active {
             z-index: 5;
             transform: translateY(-6px) scale(1.015);
-            box-shadow: 0 50px 90px -20px rgba(0, 0, 0, 0.7), 0 0 90px rgba(103, 65, 136, 0.28);
+            box-shadow: 0 40px 80px -15px rgba(25, 15, 34, 0.2), 0 0 50px rgba(103, 65, 136, 0.15);
         }
 
         .phone-frame:hover,
@@ -477,10 +498,9 @@
         .phone-frame:active {
             z-index: 6;
             transform: rotate(-1deg) translateY(-8px) scale(1.06);
-            box-shadow: 0 35px 65px -12px rgba(0, 0, 0, 0.75), 0 0 55px rgba(103, 65, 136, 0.32);
+            box-shadow: 0 35px 65px -12px rgba(25, 15, 34, 0.3), 0 0 45px rgba(103, 65, 136, 0.2);
         }
 
-        /* Style switcher — cycle the mockup pair shown on stage */
         .stage-nav-btn {
             position: absolute;
             top: 44%;
@@ -490,17 +510,19 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: rgba(237, 231, 220, 0.05);
-            border: 1px solid rgba(237, 231, 220, 0.15);
-            color: #EDE7DC;
+            background: #FFFFFF;
+            border: 1px solid rgba(103, 65, 136, 0.2);
+            color: #2A1B38;
             cursor: pointer;
             z-index: 8;
             transition: all 0.2s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
 
         .stage-nav-btn:hover {
-            background: rgba(142, 107, 174, 0.22);
-            border-color: rgba(142, 107, 174, 0.55);
+            background: #674188;
+            color: #FFFFFF;
+            border-color: #674188;
         }
 
         .stage-nav-btn.left { left: 8px; }
@@ -510,7 +532,7 @@
             width: 6px;
             height: 6px;
             border-radius: 50%;
-            background: rgba(237, 231, 220, 0.25);
+            background: rgba(103, 65, 136, 0.25);
             border: none;
             cursor: pointer;
             padding: 0;
@@ -518,12 +540,11 @@
         }
 
         .stage-dot.active {
-            background: #8E6BAE;
+            background: #674188;
             width: 16px;
             border-radius: 3px;
         }
 
-        /* Signature — the clinic's heartbeat, drawn once at open, turn, and close */
         .pulse-signature {
             width: 100%;
             max-width: 560px;
@@ -563,12 +584,12 @@
         }
 
         .slide::-webkit-scrollbar-thumb {
-            background: rgba(237, 231, 220, 0.2);
+            background: rgba(103, 65, 136, 0.2);
             border-radius: 3px;
         }
 
         .slide::-webkit-scrollbar-thumb:hover {
-            background: rgba(142, 107, 174, 0.4);
+            background: rgba(103, 65, 136, 0.4);
         }
 
         @media (max-width: 768px) {
@@ -592,7 +613,6 @@
             }
         }
 
-        /* Premium Mockup Hover Layer Swap */
         .mockup-layer {
             transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), z-index 0.3s ease;
         }
@@ -619,9 +639,32 @@
             transform: translate(40px, 0px) scale(1.18) !important;
         }
 
-        /* Invoicing Scroll on Hover inside Widescreen MacBook screen */
         .show-single .group\/screen:hover #reception-macbook-screen-img {
             transform: translateY(-35.5%) !important;
+        }
+
+        /* Theme Toggle Badge */
+        .theme-toggle-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            border-radius: 20px;
+            background: #FFFFFF;
+            border: 1px solid rgba(103, 65, 136, 0.2);
+            color: #522E75;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 11px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        .theme-toggle-btn:hover {
+            background: #674188;
+            color: #FFFFFF;
+            border-color: #674188;
+            box-shadow: 0 4px 12px rgba(103, 65, 136, 0.25);
         }
     </style>
 </head>
@@ -629,9 +672,9 @@
     <svg width="0" height="0" style="position:absolute">
         <defs>
             <linearGradient id="pulseStroke" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stop-color="#C8A1E0"/>
-                <stop offset="55%" stop-color="#8E6BAE"/>
-                <stop offset="100%" stop-color="#674188"/>
+                <stop offset="0%" stop-color="#3D1F5B"/>
+                <stop offset="55%" stop-color="#674188"/>
+                <stop offset="100%" stop-color="#9B68C4"/>
             </linearGradient>
         </defs>
     </svg>
@@ -643,7 +686,11 @@
     <div class="logo-container">
         <img src="https://z-cdn-media.chatglm.cn/files/b86c719a-2c36-4767-b2bc-8a62abbe919c.png?auth_key=1883699063-e5cf5ce77c7a4b48bee507b93f63e72c-0-443137886a4d79f58eddd2c34c0dbc98" 
              alt="Medura Hub" 
-             style="height: 40px; filter: brightness(1.2);">
+             style="height: 40px;">
+        <a href="index.html" class="theme-toggle-btn" title="Switch to Dark Edition">
+            <iconify-icon icon="lucide:moon" width="14"></iconify-icon>
+            Dark Mode
+        </a>
     </div>
     
     <!-- Slide Number -->
@@ -681,24 +728,24 @@
                 <svg class="pulse-signature mb-8" viewBox="0 0 600 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     <path class="pulse-trace" d="M0,60 H170 L192,66 L206,18 L226,104 L244,54 L262,64 H340 L356,50 L370,72 L384,60 H600"/>
                 </svg>
-                <p class="text-2xl md:text-3xl font-light text-purple-100 mb-12 max-w-3xl">
-                    The operating system for modern clinics — <span class="text-purple-300">built in Egypt, for Egypt.</span>
+                <p class="text-2xl md:text-3xl font-light text-purple-950 mb-12 max-w-3xl">
+                    The operating system for modern clinics — <span class="text-purple-700">built in Egypt, for Egypt.</span>
                 </p>
-                <div class="flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm font-mono uppercase tracking-wide text-purple-300">
+                <div class="flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm font-mono uppercase tracking-wide text-purple-700">
                     <div class="flex items-center gap-2">
-                        <iconify-icon icon="lucide:check-circle" class="text-purple-400"></iconify-icon>
+                        <iconify-icon icon="lucide:check-circle" class="text-purple-600"></iconify-icon>
                         35 Features Delivered
                     </div>
                     <div class="flex items-center gap-2">
-                        <iconify-icon icon="lucide:shield-check" class="text-purple-400"></iconify-icon>
+                        <iconify-icon icon="lucide:shield-check" class="text-purple-600"></iconify-icon>
                         100% Secure
                     </div>
                     <div class="flex items-center gap-2">
-                        <iconify-icon icon="lucide:languages" class="text-purple-400"></iconify-icon>
+                        <iconify-icon icon="lucide:languages" class="text-purple-600"></iconify-icon>
                         Arabic & English
                     </div>
                     <div class="flex items-center gap-2">
-                        <iconify-icon icon="lucide:bot" class="text-purple-400"></iconify-icon>
+                        <iconify-icon icon="lucide:bot" class="text-purple-600"></iconify-icon>
                         Real AI — Today
                     </div>
                 </div>
@@ -720,57 +767,57 @@
                 <div class="space-y-7">
                     <div class="flex gap-6 items-start filter grayscale">
                         <span class="flex-shrink-0 w-12 h-12 rounded-full border border-dashed border-purple-300/30 flex items-center justify-center">
-                            <iconify-icon icon="lucide:keyboard" class="text-xl text-purple-300/70"></iconify-icon>
+                            <iconify-icon icon="lucide:keyboard" class="text-xl text-purple-800/75"></iconify-icon>
                         </span>
                         <div>
                             <h3 class="text-xl font-semibold mb-2">You type while the patient talks.</h3>
-                            <p class="text-purple-200/70 text-lg">Writing notes, diagnoses, and prescriptions by hand or keyboard — while your patient sits there, watching.</p>
+                            <p class="text-purple-900/75 text-lg">Writing notes, diagnoses, and prescriptions by hand or keyboard — while your patient sits there, watching.</p>
                         </div>
                     </div>
 
                     <div class="flex gap-6 items-start filter grayscale">
                         <span class="flex-shrink-0 w-12 h-12 rounded-full border border-dashed border-purple-300/30 flex items-center justify-center">
-                            <iconify-icon icon="lucide:file-spreadsheet" class="text-xl text-purple-300/70"></iconify-icon>
+                            <iconify-icon icon="lucide:file-spreadsheet" class="text-xl text-purple-800/75"></iconify-icon>
                         </span>
                         <div>
                             <h3 class="text-xl font-semibold mb-2">Your finances live in Excel.</h3>
-                            <p class="text-purple-200/70 text-lg">At the end of every month, you recalculate every doctor's share. Manually. Again.</p>
+                            <p class="text-purple-900/75 text-lg">At the end of every month, you recalculate every doctor's share. Manually. Again.</p>
                         </div>
                     </div>
 
                     <div class="flex gap-6 items-start filter grayscale">
                         <span class="flex-shrink-0 w-12 h-12 rounded-full border border-dashed border-purple-300/30 flex items-center justify-center">
-                            <iconify-icon icon="lucide:image-off" class="text-xl text-purple-300/70"></iconify-icon>
+                            <iconify-icon icon="lucide:image-off" class="text-xl text-purple-800/75"></iconify-icon>
                         </span>
                         <div>
                             <h3 class="text-xl font-semibold mb-2">The patient forgot their old X-rays.</h3>
-                            <p class="text-purple-200/70 text-lg">They always do. And now you're guessing.</p>
+                            <p class="text-purple-900/75 text-lg">They always do. And now you're guessing.</p>
                         </div>
                     </div>
 
                     <div class="flex gap-6 items-start filter grayscale">
                         <span class="flex-shrink-0 w-12 h-12 rounded-full border border-dashed border-purple-300/30 flex items-center justify-center">
-                            <iconify-icon icon="lucide:help-circle" class="text-xl text-purple-300/70"></iconify-icon>
+                            <iconify-icon icon="lucide:help-circle" class="text-xl text-purple-800/75"></iconify-icon>
                         </span>
                         <div>
                             <h3 class="text-xl font-semibold mb-2">You have no idea what your clinic actually earns.</h3>
-                            <p class="text-purple-200/70 text-lg">Revenue? Expenses? Stock levels? You find out when it's too late.</p>
+                            <p class="text-purple-900/75 text-lg">Revenue? Expenses? Stock levels? You find out when it's too late.</p>
                         </div>
                     </div>
 
                     <div class="flex gap-6 items-start filter grayscale">
                         <span class="flex-shrink-0 w-12 h-12 rounded-full border border-dashed border-purple-300/30 flex items-center justify-center">
-                            <iconify-icon icon="lucide:presentation" class="text-xl text-purple-300/70"></iconify-icon>
+                            <iconify-icon icon="lucide:presentation" class="text-xl text-purple-800/75"></iconify-icon>
                         </span>
                         <div>
                             <h3 class="text-xl font-semibold mb-2">Your queue is a whiteboard.</h3>
-                            <p class="text-purple-200/70 text-lg">Patients call the receptionist every 20 minutes asking "how long?"</p>
+                            <p class="text-purple-900/75 text-lg">Patients call the receptionist every 20 minutes asking "how long?"</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="mt-14 p-8 rounded-sm bg-purple-900/10 border-l-2 border-purple-500/50">
-                    <p class="text-2xl font-serif italic text-center text-purple-100">
+                <div class="mt-14 p-8 rounded-sm bg-purple-100/70 border-l-2 border-purple-400">
+                    <p class="text-2xl font-serif italic text-center text-purple-950">
                         "You became a doctor to heal people — not to run a spreadsheet."
                     </p>
                 </div>
@@ -791,33 +838,33 @@
                 
                 <div class="grid md:grid-cols-3 gap-8 mb-16">
                     <div class="gradient-border rounded-2xl p-8 text-center">
-                        <iconify-icon icon="lucide:clock" class="text-5xl text-purple-400 mb-4"></iconify-icon>
-                        <h3 class="text-lg font-semibold text-purple-300 uppercase tracking-wide mb-4">Time</h3>
+                        <iconify-icon icon="lucide:clock" class="text-5xl text-purple-600 mb-4"></iconify-icon>
+                        <h3 class="text-lg font-semibold text-purple-700 uppercase tracking-wide mb-4">Time</h3>
                         <p class="text-4xl font-bold font-mono gradient-text mb-3">2-3 hours</p>
-                        <p class="text-purple-200/70">lost daily to manual data entry, phone calls & follow-ups</p>
+                        <p class="text-purple-900/75">lost daily to manual data entry, phone calls & follow-ups</p>
                     </div>
                     
                     <div class="gradient-border rounded-2xl p-8 text-center">
-                        <iconify-icon icon="lucide:wallet" class="text-5xl text-purple-400 mb-4"></iconify-icon>
-                        <h3 class="text-lg font-semibold text-purple-300 uppercase tracking-wide mb-4">Money</h3>
+                        <iconify-icon icon="lucide:wallet" class="text-5xl text-purple-600 mb-4"></iconify-icon>
+                        <h3 class="text-lg font-semibold text-purple-700 uppercase tracking-wide mb-4">Money</h3>
                         <p class="text-4xl font-bold font-mono gradient-text mb-3">15-30%</p>
-                        <p class="text-purple-200/70">revenue leakage from uncollected fees & stock waste</p>
+                        <p class="text-purple-900/75">revenue leakage from uncollected fees & stock waste</p>
                     </div>
                     
                     <div class="gradient-border rounded-2xl p-8 text-center">
-                        <iconify-icon icon="lucide:stethoscope" class="text-5xl text-purple-400 mb-4"></iconify-icon>
-                        <h3 class="text-lg font-semibold text-purple-300 uppercase tracking-wide mb-4">Stress</h3>
+                        <iconify-icon icon="lucide:stethoscope" class="text-5xl text-purple-600 mb-4"></iconify-icon>
+                        <h3 class="text-lg font-semibold text-purple-700 uppercase tracking-wide mb-4">Stress</h3>
                         <p class="text-4xl font-bold font-mono gradient-text mb-3">40%</p>
-                        <p class="text-purple-200/70">patient dissatisfaction when waiting without updates</p>
+                        <p class="text-purple-900/75">patient dissatisfaction when waiting without updates</p>
                     </div>
                 </div>
                 
-                <div class="p-10 rounded-2xl bg-gradient-to-r from-purple-600/20 via-purple-500/10 to-purple-600/20 border border-purple-500/40 glow-purple">
+                <div class="p-10 rounded-2xl bg-gradient-to-r from-purple-600/20 via-purple-500/10 to-purple-600/20 border border-purple-300 glow-purple">
                     <div class="text-center">
-                        <p class="text-xl text-purple-100 mb-3">The average clinic in Egypt loses</p>
+                        <p class="text-xl text-purple-950 mb-3">The average clinic in Egypt loses</p>
                         <p class="text-5xl font-bold font-mono gradient-text mb-3">EGP 3,000–8,000/month</p>
-                        <p class="text-lg text-purple-200/80">in preventable operational waste.</p>
-                        <p class="text-xl font-semibold text-purple-300 mt-6">That's your software subscription — <span class="text-white">paid for itself, 3× over.</span></p>
+                        <p class="text-lg text-purple-900/80">in preventable operational waste.</p>
+                        <p class="text-xl font-semibold text-purple-700 mt-6">That's your software subscription — <span class="text-white">paid for itself, 3× over.</span></p>
                     </div>
                 </div>
             </div>
@@ -835,7 +882,7 @@
                     <span class="gradient-text">Differently.</span>
                 </h2>
                 
-                <div class="space-y-6 text-xl text-purple-100/90 leading-relaxed mb-12">
+                <div class="space-y-6 text-xl text-purple-950/90 leading-relaxed mb-12">
                     <p>You walk in. Your receptionist already sees today's queue — organized, color-coded, real-time.</p>
                     <p>Before your first patient enters, the AI has already summarized their full medical history.</p>
                     <p>You speak your diagnosis aloud. The prescription writes itself.</p>
@@ -846,7 +893,7 @@
                     <path class="pulse-trace" d="M0,60 H170 L192,66 L206,18 L226,104 L244,54 L262,64 H340 L356,50 L370,72 L384,60 H600"/>
                 </svg>
 
-                <div class="p-10 rounded-sm border-2 border-purple-500/50 bg-gradient-to-br from-purple-900/40 to-transparent">
+                <div class="p-10 rounded-sm border-2 border-purple-400 bg-gradient-to-br from-purple-900/40 to-transparent">
                     <p class="text-3xl font-serif text-center">
                         This is not the future.<br>
                         <span class="gradient-text-duo font-bold">This is Medura Hub — available today.</span>
@@ -866,61 +913,61 @@
                     One Platform. Every Workflow.<br>
                     <span class="gradient-text">Zero Gaps.</span>
                 </h2>
-                <p class="text-xl text-purple-200/80 mb-12 max-w-3xl">
+                <p class="text-xl text-purple-900/80 mb-12 max-w-3xl">
                     Medura Hub covers the full clinic operating loop — from the moment a patient discovers your clinic to the moment you settle the monthly accounts.
                 </p>
                 
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
                     <div class="gradient-border rounded-xl p-6 card-hover">
-                        <iconify-icon icon="lucide:calendar-check" class="text-3xl text-purple-400 mb-3"></iconify-icon>
+                        <iconify-icon icon="lucide:calendar-check" class="text-3xl text-purple-600 mb-3"></iconify-icon>
                         <h3 class="font-semibold mb-2">Patient Portal & Online Booking</h3>
-                        <p class="text-sm text-purple-200/60">24/7 self-service appointments</p>
+                        <p class="text-sm text-purple-800/70">24/7 self-service appointments</p>
                     </div>
                     
                     <div class="gradient-border rounded-xl p-6 card-hover">
-                        <iconify-icon icon="lucide:users" class="text-3xl text-purple-400 mb-3"></iconify-icon>
+                        <iconify-icon icon="lucide:users" class="text-3xl text-purple-600 mb-3"></iconify-icon>
                         <h3 class="font-semibold mb-2">Reception & Queue Management</h3>
-                        <p class="text-sm text-purple-200/60">Real-time patient flow control</p>
+                        <p class="text-sm text-purple-800/70">Real-time patient flow control</p>
                     </div>
                     
                     <div class="gradient-border rounded-xl p-6 card-hover">
-                        <iconify-icon icon="lucide:stethoscope" class="text-3xl text-purple-400 mb-3"></iconify-icon>
+                        <iconify-icon icon="lucide:stethoscope" class="text-3xl text-purple-600 mb-3"></iconify-icon>
                         <h3 class="font-semibold mb-2">Doctor Dashboard</h3>
-                        <p class="text-sm text-purple-200/60">Clinical command center</p>
+                        <p class="text-sm text-purple-800/70">Clinical command center</p>
                     </div>
                     
                     <div class="gradient-border rounded-xl p-6 card-hover">
-                        <iconify-icon icon="lucide:smile" class="text-3xl text-purple-400 mb-3"></iconify-icon>
+                        <iconify-icon icon="lucide:smile" class="text-3xl text-purple-600 mb-3"></iconify-icon>
                         <h3 class="font-semibold mb-2">Dental Specialty Suite</h3>
-                        <p class="text-sm text-purple-200/60">Odontogram & treatment plans</p>
+                        <p class="text-sm text-purple-800/70">Odontogram & treatment plans</p>
                     </div>
                     
                     <div class="gradient-border rounded-xl p-6 card-hover">
-                        <iconify-icon icon="lucide:pill" class="text-3xl text-purple-400 mb-3"></iconify-icon>
+                        <iconify-icon icon="lucide:pill" class="text-3xl text-purple-600 mb-3"></iconify-icon>
                         <h3 class="font-semibold mb-2">Prescriptions & Medications</h3>
-                        <p class="text-sm text-purple-200/60">24,800+ drugs database</p>
+                        <p class="text-sm text-purple-800/70">24,800+ drugs database</p>
                     </div>
                     
                     <div class="gradient-border rounded-xl p-6 card-hover">
-                        <iconify-icon icon="lucide:bar-chart-3" class="text-3xl text-purple-400 mb-3"></iconify-icon>
+                        <iconify-icon icon="lucide:bar-chart-3" class="text-3xl text-purple-600 mb-3"></iconify-icon>
                         <h3 class="font-semibold mb-2">Finance, Billing & Settlements</h3>
-                        <p class="text-sm text-purple-200/60">Auto-calculated doctor shares</p>
+                        <p class="text-sm text-purple-800/70">Auto-calculated doctor shares</p>
                     </div>
                     
                     <div class="gradient-border rounded-xl p-6 card-hover">
-                        <iconify-icon icon="lucide:package" class="text-3xl text-purple-400 mb-3"></iconify-icon>
+                        <iconify-icon icon="lucide:package" class="text-3xl text-purple-600 mb-3"></iconify-icon>
                         <h3 class="font-semibold mb-2">Inventory & Stock Control</h3>
-                        <p class="text-sm text-purple-200/60">Never run out again</p>
+                        <p class="text-sm text-purple-800/70">Never run out again</p>
                     </div>
                     
-                    <div class="gradient-border rounded-xl p-6 card-hover border-purple-500/40 bg-purple-900/20">
-                        <iconify-icon icon="lucide:bot" class="text-3xl text-purple-400 mb-3"></iconify-icon>
+                    <div class="gradient-border rounded-xl p-6 card-hover border-purple-300 bg-purple-100/80">
+                        <iconify-icon icon="lucide:bot" class="text-3xl text-purple-600 mb-3"></iconify-icon>
                         <h3 class="font-semibold mb-2">AI Clinical Intelligence</h3>
-                        <p class="text-sm text-purple-200/60">6 active AI tasks today</p>
+                        <p class="text-sm text-purple-800/70">6 active AI tasks today</p>
                     </div>
                 </div>
                 
-                <p class="text-center text-purple-300/60 mt-10 text-sm">
+                <p class="text-center text-purple-800/70 mt-10 text-sm">
                     Works for: General Practice · Dental Clinics · Polyclinics · Multi-Doctor Centers
                 </p>
             </div>
@@ -941,50 +988,50 @@
                             Your Clinic Has a Face Online —<br>
                             <span class="gradient-text">And It Books Appointments 24/7.</span>
                         </h2>
-                        <p class="text-xl text-purple-200/70 mb-8">While you sleep, Medura Hub fills your schedule.</p>
+                        <p class="text-xl text-purple-900/75 mb-8">While you sleep, Medura Hub fills your schedule.</p>
                         
                         <div class="grid sm:grid-cols-2 gap-4 mb-8">
                             <div class="gradient-border rounded-xl p-4">
                                 <h3 class="font-semibold text-base mb-2 flex items-center gap-2">
-                                    <iconify-icon icon="lucide:layout" class="text-purple-400"></iconify-icon>
+                                    <iconify-icon icon="lucide:layout" class="text-purple-600"></iconify-icon>
                                     Public Clinic Page
                                 </h3>
-                                <p class="text-purple-200/70 text-sm">Branded page with your photo, specialties, hours, location. Patients book directly — no phone call needed.</p>
+                                <p class="text-purple-900/75 text-sm">Branded page with your photo, specialties, hours, location. Patients book directly — no phone call needed.</p>
                             </div>
                             
                             <div class="gradient-border rounded-xl p-4">
                                 <h3 class="font-semibold text-base mb-2 flex items-center gap-2">
-                                    <iconify-icon icon="lucide:mouse-pointer-click" class="text-purple-400"></iconify-icon>
+                                    <iconify-icon icon="lucide:mouse-pointer-click" class="text-purple-600"></iconify-icon>
                                     Smart Booking Wizard
                                 </h3>
-                                <p class="text-purple-200/70 text-sm">4-step flow: choose doctor → pick time → enter details → confirm with QR. Under 2 minutes.</p>
+                                <p class="text-purple-900/75 text-sm">4-step flow: choose doctor → pick time → enter details → confirm with QR. Under 2 minutes.</p>
                             </div>
                             
                             <div class="gradient-border rounded-xl p-4">
                                 <h3 class="font-semibold text-base mb-2 flex items-center gap-2">
-                                    <iconify-icon icon="lucide:message-circle" class="text-purple-400"></iconify-icon>
+                                    <iconify-icon icon="lucide:message-circle" class="text-purple-600"></iconify-icon>
                                     AI Chatbot Widget
                                 </h3>
-                                <p class="text-purple-200/70 text-sm">Answers questions, helps book, hands off to WhatsApp if needed. Available 24/7. Never misses a lead.</p>
+                                <p class="text-purple-900/75 text-sm">Answers questions, helps book, hands off to WhatsApp if needed. Available 24/7. Never misses a lead.</p>
                             </div>
                             
                             <div class="gradient-border rounded-xl p-4">
                                 <h3 class="font-semibold text-base mb-2 flex items-center gap-2">
-                                    <iconify-icon icon="lucide:map-pin" class="text-purple-400"></iconify-icon>
+                                    <iconify-icon icon="lucide:map-pin" class="text-purple-600"></iconify-icon>
                                     Live Queue Tracker
                                 </h3>
-                                <p class="text-purple-200/70 text-sm">Patients track their real-time queue position from their phone. No more "how long?" calls.</p>
+                                <p class="text-purple-900/75 text-sm">Patients track their real-time queue position from their phone. No more "how long?" calls.</p>
                             </div>
                         </div>
                         
                         <div class="grid sm:grid-cols-2 gap-4">
                             <div class="pain-box p-4">
-                                <p class="text-red-300/80 text-xs font-mono uppercase tracking-wider mb-1">Old way</p>
-                                <p class="text-red-200/80 text-sm">Receptionist answers 30–40 phone calls per day just for bookings.</p>
+                                <p class="text-red-700 text-xs font-mono uppercase tracking-wider mb-1">Old way</p>
+                                <p class="text-red-800 text-sm">Receptionist answers 30–40 phone calls per day just for bookings.</p>
                             </div>
                             <div class="solution-box p-4">
-                                <p class="text-purple-300 text-xs font-mono uppercase tracking-wider mb-1">Medura Hub</p>
-                                <p class="text-purple-100/80 text-sm">Patients self-book. Receptionist focuses on people in front of them.</p>
+                                <p class="text-purple-700 text-xs font-mono uppercase tracking-wider mb-1">Medura Hub</p>
+                                <p class="text-purple-950/80 text-sm">Patients self-book. Receptionist focuses on people in front of them.</p>
                             </div>
                         </div>
                     </div>
@@ -994,16 +1041,16 @@
                         
                         <!-- Variation Switcher Tabs -->
                         <div class="flex justify-center gap-2 mb-6 w-full max-w-[440px] z-30">
-                            <button id="mockup-tab-1" onclick="switchMockup(1)" class="mockup-tab-btn flex-1 py-2 px-1 rounded-lg border text-[11px] font-mono bg-purple-600/30 border-purple-500/50 text-white font-medium shadow-md transition-all">
+                            <button id="mockup-tab-1" onclick="switchMockup(1)" class="mockup-tab-btn flex-1 py-2 px-1 rounded-lg border text-[11px] font-mono bg-purple-600/30 border-purple-400 text-white font-medium shadow-md transition-all">
                                 Hero v1
                             </button>
-                            <button id="mockup-tab-2" onclick="switchMockup(2)" class="mockup-tab-btn flex-1 py-2 px-1 rounded-lg border text-[11px] font-mono bg-neutral-900/40 border-neutral-800 text-purple-300/70 hover:text-white transition-all">
+                            <button id="mockup-tab-2" onclick="switchMockup(2)" class="mockup-tab-btn flex-1 py-2 px-1 rounded-lg border text-[11px] font-mono bg-neutral-900/40 border-neutral-800 text-purple-800/75 hover:text-white transition-all">
                                 Hero v2
                             </button>
-                            <button id="mockup-tab-3" onclick="switchMockup(3)" class="mockup-tab-btn flex-1 py-2 px-1 rounded-lg border text-[11px] font-mono bg-neutral-900/40 border-neutral-800 text-purple-300/70 hover:text-white transition-all">
+                            <button id="mockup-tab-3" onclick="switchMockup(3)" class="mockup-tab-btn flex-1 py-2 px-1 rounded-lg border text-[11px] font-mono bg-neutral-900/40 border-neutral-800 text-purple-800/75 hover:text-white transition-all">
                                 Booking v1
                             </button>
-                            <button id="mockup-tab-4" onclick="switchMockup(4)" class="mockup-tab-btn flex-1 py-2 px-1 rounded-lg border text-[11px] font-mono bg-neutral-900/40 border-neutral-800 text-purple-300/70 hover:text-white transition-all">
+                            <button id="mockup-tab-4" onclick="switchMockup(4)" class="mockup-tab-btn flex-1 py-2 px-1 rounded-lg border text-[11px] font-mono bg-neutral-900/40 border-neutral-800 text-purple-800/75 hover:text-white transition-all">
                                 Booking v2
                             </button>
                         </div>
@@ -1088,58 +1135,58 @@
                             Your Receptionist Has a War Room.<br>
                             <span class="gradient-text">Not a Whiteboard.</span>
                         </h2>
-                        <p class="text-xl text-purple-200/70 mb-8">Real-time queue management so the front desk always knows what's happening.</p>
+                        <p class="text-xl text-purple-900/75 mb-8">Real-time queue management so the front desk always knows what's happening.</p>
                         
                         <div class="grid sm:grid-cols-2 gap-4 mb-8">
                             <div class="gradient-border rounded-xl p-4">
                                 <h3 class="font-semibold text-base mb-1 flex items-center gap-2">
-                                    <iconify-icon icon="lucide:eye" class="text-purple-400"></iconify-icon>
+                                    <iconify-icon icon="lucide:eye" class="text-purple-600"></iconify-icon>
                                     Daily Queue
                                 </h3>
-                                <p class="text-purple-200/70 text-sm">Every appointment visible — status, doctor, time, patient. Color-coded. One screen.</p>
+                                <p class="text-purple-900/75 text-sm">Every appointment visible — status, doctor, time, patient. Color-coded. One screen.</p>
                             </div>
                             
                             <div class="gradient-border rounded-xl p-4">
                                 <h3 class="font-semibold text-base mb-1 flex items-center gap-2">
-                                    <iconify-icon icon="lucide:user-plus" class="text-purple-400"></iconify-icon>
+                                    <iconify-icon icon="lucide:user-plus" class="text-purple-600"></iconify-icon>
                                     Walk-In Registration
                                 </h3>
-                                <p class="text-purple-200/70 text-sm">Register walk-in patients in under 60 seconds. No paper forms, no redundant entry.</p>
+                                <p class="text-purple-900/75 text-sm">Register walk-in patients in under 60 seconds. No paper forms, no redundant entry.</p>
                             </div>
                             
                             <div class="gradient-border rounded-xl p-4">
                                 <h3 class="font-semibold text-base mb-1 flex items-center gap-2">
-                                    <iconify-icon icon="lucide:bell-ring" class="text-purple-400"></iconify-icon>
+                                    <iconify-icon icon="lucide:bell-ring" class="text-purple-600"></iconify-icon>
                                     Live Alerts
                                 </h3>
-                                <p class="text-purple-200/70 text-sm">Doctor presses "call next" — receptionist gets instant notification. No shouting.</p>
+                                <p class="text-purple-900/75 text-sm">Doctor presses "call next" — receptionist gets instant notification. No shouting.</p>
                             </div>
                             
                             <div class="gradient-border rounded-xl p-4">
                                 <h3 class="font-semibold text-base mb-1 flex items-center gap-2">
-                                    <iconify-icon icon="lucide:credit-card" class="text-purple-400"></iconify-icon>
+                                    <iconify-icon icon="lucide:credit-card" class="text-purple-600"></iconify-icon>
                                     Checkout Payment
                                 </h3>
-                                <p class="text-purple-200/70 text-sm">Collect fees, apply discounts, generate receipts — all from the same screen.</p>
+                                <p class="text-purple-900/75 text-sm">Collect fees, apply discounts, generate receipts — all from the same screen.</p>
                             </div>
                             
                             <div class="gradient-border rounded-xl p-4 sm:col-span-2">
                                 <h3 class="font-semibold text-base mb-1 flex items-center gap-2">
-                                    <iconify-icon icon="lucide:qr-code" class="text-purple-400"></iconify-icon>
+                                    <iconify-icon icon="lucide:qr-code" class="text-purple-600"></iconify-icon>
                                     Public Queue QR Code
                                 </h3>
-                                <p class="text-purple-200/70 text-sm">Patients scan QR at entrance and track their own queue position. Zero status calls.</p>
+                                <p class="text-purple-900/75 text-sm">Patients scan QR at entrance and track their own queue position. Zero status calls.</p>
                             </div>
                         </div>
                         
                         <div class="grid sm:grid-cols-2 gap-4">
                             <div class="pain-box p-4">
-                                <p class="text-red-300/80 text-xs font-mono uppercase tracking-wider mb-1">Old way</p>
-                                <p class="text-red-200/80 text-sm">3 notebooks, 2 WhatsApp groups, and a whiteboard.</p>
+                                <p class="text-red-700 text-xs font-mono uppercase tracking-wider mb-1">Old way</p>
+                                <p class="text-red-800 text-sm">3 notebooks, 2 WhatsApp groups, and a whiteboard.</p>
                             </div>
                             <div class="solution-box p-4">
-                                <p class="text-purple-300 text-xs font-mono uppercase tracking-wider mb-1">Medura Hub</p>
-                                <p class="text-purple-100/80 text-sm">One screen. Complete control.</p>
+                                <p class="text-purple-700 text-xs font-mono uppercase tracking-wider mb-1">Medura Hub</p>
+                                <p class="text-purple-950/80 text-sm">One screen. Complete control.</p>
                             </div>
                         </div>
                     </div>
@@ -1149,10 +1196,10 @@
                         
                         <!-- Variation Switcher Tabs -->
                         <div class="flex justify-center gap-2 mb-6 w-full max-w-[440px] z-30">
-                            <button id="reception-mockup-tab-1" onclick="switchReceptionMockup(1)" class="reception-mockup-tab-btn flex-1 py-2 px-1 rounded-lg border text-[11px] font-mono bg-purple-600/30 border-purple-500/50 text-white font-medium shadow-md transition-all">
+                            <button id="reception-mockup-tab-1" onclick="switchReceptionMockup(1)" class="reception-mockup-tab-btn flex-1 py-2 px-1 rounded-lg border text-[11px] font-mono bg-purple-600/30 border-purple-400 text-white font-medium shadow-md transition-all">
                                 Queue Dashboard
                             </button>
-                            <button id="reception-mockup-tab-2" onclick="switchReceptionMockup(2)" class="reception-mockup-tab-btn flex-1 py-2 px-1 rounded-lg border text-[11px] font-mono bg-neutral-900/40 border-neutral-800 text-purple-300/70 hover:text-white transition-all">
+                            <button id="reception-mockup-tab-2" onclick="switchReceptionMockup(2)" class="reception-mockup-tab-btn flex-1 py-2 px-1 rounded-lg border text-[11px] font-mono bg-neutral-900/40 border-neutral-800 text-purple-800/75 hover:text-white transition-all">
                                 Invoices & Billing
                             </button>
                         </div>
@@ -1233,54 +1280,54 @@
                     Everything You Need Before<br>
                     <span class="gradient-text">the Patient Walks In.</span>
                 </h2>
-                <p class="text-xl text-purple-200/70 mb-12">Your clinical command center — smart, fast, designed for real consultations.</p>
+                <p class="text-xl text-purple-900/75 mb-12">Your clinical command center — smart, fast, designed for real consultations.</p>
                 
                 <div class="grid md:grid-cols-2 gap-5 mb-10">
                     <div class="gradient-border rounded-xl p-6">
-                        <iconify-icon icon="lucide:calendar-days" class="text-2xl text-purple-400 mb-3"></iconify-icon>
+                        <iconify-icon icon="lucide:calendar-days" class="text-2xl text-purple-600 mb-3"></iconify-icon>
                         <h3 class="font-semibold mb-2">Appointment Calendar</h3>
-                        <p class="text-sm text-purple-200/70">Full day/week/month view. Real-time sync with reception.</p>
+                        <p class="text-sm text-purple-900/75">Full day/week/month view. Real-time sync with reception.</p>
                     </div>
                     
-                    <div class="gradient-border rounded-xl p-6 border-purple-500/40 bg-purple-900/20">
-                        <iconify-icon icon="lucide:brain" class="text-2xl text-purple-400 mb-3"></iconify-icon>
+                    <div class="gradient-border rounded-xl p-6 border-purple-300 bg-purple-100/80">
+                        <iconify-icon icon="lucide:brain" class="text-2xl text-purple-600 mb-3"></iconify-icon>
                         <h3 class="font-semibold mb-2">AI Patient Summary</h3>
-                        <p class="text-sm text-purple-200/70">2-line AI summary before each visit: history, medications, vitals. 5 seconds to know everything.</p>
+                        <p class="text-sm text-purple-900/75">2-line AI summary before each visit: history, medications, vitals. 5 seconds to know everything.</p>
                     </div>
                     
                     <div class="gradient-border rounded-xl p-6">
-                        <iconify-icon icon="lucide:clipboard-list" class="text-2xl text-purple-400 mb-3"></iconify-icon>
+                        <iconify-icon icon="lucide:clipboard-list" class="text-2xl text-purple-600 mb-3"></iconify-icon>
                         <h3 class="font-semibold mb-2">Consultation Workspace</h3>
-                        <p class="text-sm text-purple-200/70">Chief complaint → diagnosis → treatment → prescription → follow-up. Structured. Fast. Clean.</p>
+                        <p class="text-sm text-purple-900/75">Chief complaint → diagnosis → treatment → prescription → follow-up. Structured. Fast. Clean.</p>
                     </div>
                     
-                    <div class="gradient-border rounded-xl p-6 border-purple-500/40 bg-purple-900/20">
-                        <iconify-icon icon="lucide:mic" class="text-2xl text-purple-400 mb-3"></iconify-icon>
+                    <div class="gradient-border rounded-xl p-6 border-purple-300 bg-purple-100/80">
+                        <iconify-icon icon="lucide:mic" class="text-2xl text-purple-600 mb-3"></iconify-icon>
                         <h3 class="font-semibold mb-2">Voice-to-Text Clinical Entry</h3>
-                        <p class="text-sm text-purple-200/70">Speak diagnosis in Arabic. Transcribed directly into form. No keyboard. Eyes on patient.</p>
+                        <p class="text-sm text-purple-900/75">Speak diagnosis in Arabic. Transcribed directly into form. No keyboard. Eyes on patient.</p>
                     </div>
                     
                     <div class="gradient-border rounded-xl p-6">
-                        <iconify-icon icon="lucide:lightbulb" class="text-2xl text-purple-400 mb-3"></iconify-icon>
+                        <iconify-icon icon="lucide:lightbulb" class="text-2xl text-purple-600 mb-3"></iconify-icon>
                         <h3 class="font-semibold mb-2">AI Differential Diagnosis</h3>
-                        <p class="text-sm text-purple-200/70">AI suggests possible diagnoses based on symptoms. Your smartest colleague.</p>
+                        <p class="text-sm text-purple-900/75">AI suggests possible diagnoses based on symptoms. Your smartest colleague.</p>
                     </div>
                     
                     <div class="gradient-border rounded-xl p-6">
-                        <iconify-icon icon="lucide:file-text" class="text-2xl text-purple-400 mb-3"></iconify-icon>
+                        <iconify-icon icon="lucide:file-text" class="text-2xl text-purple-600 mb-3"></iconify-icon>
                         <h3 class="font-semibold mb-2">Prescription Engine</h3>
-                        <p class="text-sm text-purple-200/70">24,800+ drugs. Type 3 letters. Structured fields. Branded PDF in one click.</p>
+                        <p class="text-sm text-purple-900/75">24,800+ drugs. Type 3 letters. Structured fields. Branded PDF in one click.</p>
                     </div>
                 </div>
                 
                 <div class="grid md:grid-cols-2 gap-4">
                     <div class="pain-box">
-                        <p class="text-red-300/80 text-xs font-mono uppercase tracking-wider mb-2">Old way</p>
-                        <p class="text-red-200/80">15 minutes per patient on paperwork = 150 minutes lost per 10-patient day.</p>
+                        <p class="text-red-700 text-xs font-mono uppercase tracking-wider mb-2">Old way</p>
+                        <p class="text-red-800">15 minutes per patient on paperwork = 150 minutes lost per 10-patient day.</p>
                     </div>
                     <div class="solution-box">
-                        <p class="text-purple-300 text-xs font-mono uppercase tracking-wider mb-2">Medura Hub</p>
-                        <p class="text-purple-100/80">With AI Dictation: Under 3 minutes per consultation record.</p>
+                        <p class="text-purple-700 text-xs font-mono uppercase tracking-wider mb-2">Medura Hub</p>
+                        <p class="text-purple-950/80">With AI Dictation: Under 3 minutes per consultation record.</p>
                     </div>
                 </div>
             </div>
@@ -1297,53 +1344,53 @@
                     The Only Clinic Software in Egypt<br>
                     <span class="gradient-text">With Real AI Built In.</span>
                 </h2>
-                <p class="text-xl text-purple-200/70 mb-4">Not "Coming Soon." Today.</p>
-                <p class="text-lg text-purple-300/80 mb-12">Your competitors are still promising AI. You're already using it.</p>
+                <p class="text-xl text-purple-900/75 mb-4">Not "Coming Soon." Today.</p>
+                <p class="text-lg text-purple-800/85 mb-12">Your competitors are still promising AI. You're already using it.</p>
                 
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
                     <div class="gradient-border rounded-xl p-6 card-hover">
-                        <iconify-icon icon="lucide:mic" class="text-3xl text-purple-400 mb-3"></iconify-icon>
+                        <iconify-icon icon="lucide:mic" class="text-3xl text-purple-600 mb-3"></iconify-icon>
                         <h3 class="font-semibold mb-2">Voice-to-Text (Arabic)</h3>
-                        <p class="text-sm text-purple-200/70">Speak clinical notes in Arabic. Instant, accurate transcription.</p>
+                        <p class="text-sm text-purple-900/75">Speak clinical notes in Arabic. Instant, accurate transcription.</p>
                     </div>
                     
                     <div class="gradient-border rounded-xl p-6 card-hover">
-                        <iconify-icon icon="lucide:clipboard-check" class="text-3xl text-purple-400 mb-3"></iconify-icon>
+                        <iconify-icon icon="lucide:clipboard-check" class="text-3xl text-purple-600 mb-3"></iconify-icon>
                         <h3 class="font-semibold mb-2">AI Patient Summary</h3>
-                        <p class="text-sm text-purple-200/70">Auto-generates structured summary before each visit.</p>
+                        <p class="text-sm text-purple-900/75">Auto-generates structured summary before each visit.</p>
                     </div>
                     
                     <div class="gradient-border rounded-xl p-6 card-hover">
-                        <iconify-icon icon="lucide:brain" class="text-3xl text-purple-400 mb-3"></iconify-icon>
+                        <iconify-icon icon="lucide:brain" class="text-3xl text-purple-600 mb-3"></iconify-icon>
                         <h3 class="font-semibold mb-2">Differential Diagnosis</h3>
-                        <p class="text-sm text-purple-200/70">Suggests diagnoses based on symptoms. Your second opinion.</p>
+                        <p class="text-sm text-purple-900/75">Suggests diagnoses based on symptoms. Your second opinion.</p>
                     </div>
                     
                     <div class="gradient-border rounded-xl p-6 card-hover">
-                        <iconify-icon icon="lucide:file-check" class="text-3xl text-purple-400 mb-3"></iconify-icon>
+                        <iconify-icon icon="lucide:file-check" class="text-3xl text-purple-600 mb-3"></iconify-icon>
                         <h3 class="font-semibold mb-2">AI Visit Summary</h3>
-                        <p class="text-sm text-purple-200/70">End-of-consultation summary with decisions, prescriptions, follow-up.</p>
+                        <p class="text-sm text-purple-900/75">End-of-consultation summary with decisions, prescriptions, follow-up.</p>
                     </div>
                     
                     <div class="gradient-border rounded-xl p-6 card-hover">
-                        <iconify-icon icon="lucide:shield-alert" class="text-3xl text-purple-400 mb-3"></iconify-icon>
+                        <iconify-icon icon="lucide:shield-alert" class="text-3xl text-purple-600 mb-3"></iconify-icon>
                         <h3 class="font-semibold mb-2">Drug Sanity Check</h3>
-                        <p class="text-sm text-purple-200/70">Flags contradictions or dangerous interactions.</p>
+                        <p class="text-sm text-purple-900/75">Flags contradictions or dangerous interactions.</p>
                     </div>
                     
                     <div class="gradient-border rounded-xl p-6 card-hover">
-                        <iconify-icon icon="lucide:message-square" class="text-3xl text-purple-400 mb-3"></iconify-icon>
+                        <iconify-icon icon="lucide:message-square" class="text-3xl text-purple-600 mb-3"></iconify-icon>
                         <h3 class="font-semibold mb-2">AI Booking Chatbot</h3>
-                        <p class="text-sm text-purple-200/70">Handles questions and bookings 24/7 on your public page.</p>
+                        <p class="text-sm text-purple-900/75">Handles questions and bookings 24/7 on your public page.</p>
                     </div>
                 </div>
                 
-                <div class="p-6 rounded-xl bg-purple-900/30 border border-purple-500/30">
+                <div class="p-6 rounded-xl bg-purple-200/50 border border-purple-300">
                     <p class="text-purple-200 text-sm mb-3">Every AI usage is tracked per clinic. You control the budget. The system alerts you before limits are reached.</p>
                     <div class="flex flex-wrap gap-4 text-sm font-mono">
-                        <span class="text-purple-200/40 line-through decoration-purple-200/30">Dentolize — "AI, Coming Soon"</span>
-                        <span class="text-purple-200/40 line-through decoration-purple-200/30">Smart Clinic — Basic AI credits</span>
-                        <span class="text-purple-300 font-semibold">Medura Hub — 6 AI tasks, active today</span>
+                        <span class="text-purple-700/50 line-through decoration-purple-200/30">Dentolize — "AI, Coming Soon"</span>
+                        <span class="text-purple-700/50 line-through decoration-purple-200/30">Smart Clinic — Basic AI credits</span>
+                        <span class="text-purple-700 font-semibold">Medura Hub — 6 AI tasks, active today</span>
                     </div>
                 </div>
             </div>
@@ -1360,58 +1407,58 @@
                     Built for Dentists.<br>
                     <span class="gradient-text">Not Adapted for Them.</span>
                 </h2>
-                <p class="text-xl text-purple-200/70 mb-12">The Dental Suite is a precision tool — not an afterthought.</p>
+                <p class="text-xl text-purple-900/75 mb-12">The Dental Suite is a precision tool — not an afterthought.</p>
                 
                 <div class="space-y-4 mb-10">
                     <div class="gradient-border rounded-xl p-5 flex gap-4 items-start">
-                        <iconify-icon icon="lucide:grid-3x3" class="text-2xl text-purple-400 mt-1"></iconify-icon>
+                        <iconify-icon icon="lucide:grid-3x3" class="text-2xl text-purple-600 mt-1"></iconify-icon>
                         <div>
                             <h3 class="font-semibold mb-1">Interactive Odontogram</h3>
-                            <p class="text-purple-200/70">Click any tooth. Select condition. Charts instantly in FDI international numbering. Adults & children.</p>
+                            <p class="text-purple-900/75">Click any tooth. Select condition. Charts instantly in FDI international numbering. Adults & children.</p>
                         </div>
                     </div>
                     
                     <div class="gradient-border rounded-xl p-5 flex gap-4 items-start">
-                        <iconify-icon icon="lucide:list-checks" class="text-2xl text-purple-400 mt-1"></iconify-icon>
+                        <iconify-icon icon="lucide:list-checks" class="text-2xl text-purple-600 mt-1"></iconify-icon>
                         <div>
                             <h3 class="font-semibold mb-1">Treatment Planning</h3>
-                            <p class="text-purple-200/70">Full treatment plans: procedures, teeth, costs, notes, status. Draft → proposal → acceptance → complete.</p>
+                            <p class="text-purple-900/75">Full treatment plans: procedures, teeth, costs, notes, status. Draft → proposal → acceptance → complete.</p>
                         </div>
                     </div>
                     
                     <div class="gradient-border rounded-xl p-5 flex gap-4 items-start">
-                        <iconify-icon icon="lucide:flask-conical" class="text-2xl text-purple-400 mt-1"></iconify-icon>
+                        <iconify-icon icon="lucide:flask-conical" class="text-2xl text-purple-600 mt-1"></iconify-icon>
                         <div>
                             <h3 class="font-semibold mb-1">Lab Orders — Built In</h3>
-                            <p class="text-purple-200/70">Send lab requests from patient record. Assign, track, get overdue reminders.</p>
+                            <p class="text-purple-900/75">Send lab requests from patient record. Assign, track, get overdue reminders.</p>
                         </div>
                     </div>
                     
                     <div class="gradient-border rounded-xl p-5 flex gap-4 items-start">
-                        <iconify-icon icon="lucide:shield" class="text-2xl text-purple-400 mt-1"></iconify-icon>
+                        <iconify-icon icon="lucide:shield" class="text-2xl text-purple-600 mt-1"></iconify-icon>
                         <div>
                             <h3 class="font-semibold mb-1">Reception-Safe Dental Views</h3>
-                            <p class="text-purple-200/70">Reception sees only scheduling — not clinical notes. Privacy at data layer.</p>
+                            <p class="text-purple-900/75">Reception sees only scheduling — not clinical notes. Privacy at data layer.</p>
                         </div>
                     </div>
                     
                     <div class="gradient-border rounded-xl p-5 flex gap-4 items-start">
-                        <iconify-icon icon="lucide:alarm-clock" class="text-2xl text-purple-400 mt-1"></iconify-icon>
+                        <iconify-icon icon="lucide:alarm-clock" class="text-2xl text-purple-600 mt-1"></iconify-icon>
                         <div>
                             <h3 class="font-semibold mb-1">Dental Recalls</h3>
-                            <p class="text-purple-200/70">Auto-schedule recall appointments. Patients get reminded. You don't have to remember.</p>
+                            <p class="text-purple-900/75">Auto-schedule recall appointments. Patients get reminded. You don't have to remember.</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="grid md:grid-cols-2 gap-4">
                     <div class="pain-box">
-                        <p class="text-red-300/80 text-xs font-mono uppercase tracking-wider mb-2">Old way</p>
-                        <p class="text-red-200/80">Pen-drawn tooth charts, lost between visits. Treatment plans on WhatsApp.</p>
+                        <p class="text-red-700 text-xs font-mono uppercase tracking-wider mb-2">Old way</p>
+                        <p class="text-red-800">Pen-drawn tooth charts, lost between visits. Treatment plans on WhatsApp.</p>
                     </div>
                     <div class="solution-box">
-                        <p class="text-purple-300 text-xs font-mono uppercase tracking-wider mb-2">Medura Hub</p>
-                        <p class="text-purple-100/80">Every tooth, every procedure, every session — tracked and searchable.</p>
+                        <p class="text-purple-700 text-xs font-mono uppercase tracking-wider mb-2">Medura Hub</p>
+                        <p class="text-purple-950/80">Every tooth, every procedure, every session — tracked and searchable.</p>
                     </div>
                 </div>
             </div>
@@ -1428,52 +1475,52 @@
                     Know Every Patient Before<br>
                     <span class="gradient-text">They Speak.</span>
                 </h2>
-                <p class="text-xl text-purple-200/70 mb-12">Every visit, every test, every prescription — in one place. Forever.</p>
+                <p class="text-xl text-purple-900/75 mb-12">Every visit, every test, every prescription — in one place. Forever.</p>
                 
                 <div class="grid md:grid-cols-2 gap-5 mb-10">
                     <div class="gradient-border rounded-xl p-6">
-                        <iconify-icon icon="lucide:user" class="text-2xl text-purple-400 mb-3"></iconify-icon>
+                        <iconify-icon icon="lucide:user" class="text-2xl text-purple-600 mb-3"></iconify-icon>
                         <h3 class="font-semibold mb-2">Unified Patient Profile</h3>
-                        <p class="text-sm text-purple-200/70">Demographics, conditions, surgeries, allergies, blood type, medications, family history — all structured, searchable.</p>
+                        <p class="text-sm text-purple-900/75">Demographics, conditions, surgeries, allergies, blood type, medications, family history — all structured, searchable.</p>
                     </div>
                     
                     <div class="gradient-border rounded-xl p-6">
-                        <iconify-icon icon="lucide:timeline" class="text-2xl text-purple-400 mb-3"></iconify-icon>
+                        <iconify-icon icon="lucide:timeline" class="text-2xl text-purple-600 mb-3"></iconify-icon>
                         <h3 class="font-semibold mb-2">Visit Timeline</h3>
-                        <p class="text-sm text-purple-200/70">Every consultation in chronological order. Click any visit for full record.</p>
+                        <p class="text-sm text-purple-900/75">Every consultation in chronological order. Click any visit for full record.</p>
                     </div>
                     
                     <div class="gradient-border rounded-xl p-6">
-                        <iconify-icon icon="lucide:activity" class="text-2xl text-purple-400 mb-3"></iconify-icon>
+                        <iconify-icon icon="lucide:activity" class="text-2xl text-purple-600 mb-3"></iconify-icon>
                         <h3 class="font-semibold mb-2">Vital Signs Tracking</h3>
-                        <p class="text-sm text-purple-200/70">BP, weight, pulse, temp, O2, blood sugar — tracked with auto-generated trend charts.</p>
+                        <p class="text-sm text-purple-900/75">BP, weight, pulse, temp, O2, blood sugar — tracked with auto-generated trend charts.</p>
                     </div>
                     
                     <div class="gradient-border rounded-xl p-6">
-                        <iconify-icon icon="lucide:upload" class="text-2xl text-purple-400 mb-3"></iconify-icon>
+                        <iconify-icon icon="lucide:upload" class="text-2xl text-purple-600 mb-3"></iconify-icon>
                         <h3 class="font-semibold mb-2">Lab Results Storage</h3>
-                        <p class="text-sm text-purple-200/70">X-rays, blood work, CT scans, PDFs — all organized. Access from any device. Never lost.</p>
+                        <p class="text-sm text-purple-900/75">X-rays, blood work, CT scans, PDFs — all organized. Access from any device. Never lost.</p>
                     </div>
                 </div>
                 
-                <div class="gradient-border rounded-xl p-6 border-purple-500/40 bg-purple-900/20 mb-8">
+                <div class="gradient-border rounded-xl p-6 border-purple-300 bg-purple-100/80 mb-8">
                     <div class="flex items-start gap-4">
-                        <iconify-icon icon="lucide:brain" class="text-2xl text-purple-400 mt-1"></iconify-icon>
+                        <iconify-icon icon="lucide:brain" class="text-2xl text-purple-600 mt-1"></iconify-icon>
                         <div>
                             <h3 class="font-semibold mb-2">AI-Powered History Summary</h3>
-                            <p class="text-purple-200/70">One click: AI condenses years of history into 3-tab summary — Overview, Recent Visits, Dental. Ready before patient enters.</p>
+                            <p class="text-purple-900/75">One click: AI condenses years of history into 3-tab summary — Overview, Recent Visits, Dental. Ready before patient enters.</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="grid md:grid-cols-2 gap-4">
                     <div class="pain-box">
-                        <p class="text-red-300/80 text-xs font-mono uppercase tracking-wider mb-2">Old way</p>
-                        <p class="text-red-200/80">"Doctor, I forgot my old file at home." Guess again.</p>
+                        <p class="text-red-700 text-xs font-mono uppercase tracking-wider mb-2">Old way</p>
+                        <p class="text-red-800">"Doctor, I forgot my old file at home." Guess again.</p>
                     </div>
                     <div class="solution-box">
-                        <p class="text-purple-300 text-xs font-mono uppercase tracking-wider mb-2">Medura Hub</p>
-                        <p class="text-purple-100/80">Cloud-stored. Always there. Instantly accessible.</p>
+                        <p class="text-purple-700 text-xs font-mono uppercase tracking-wider mb-2">Medura Hub</p>
+                        <p class="text-purple-950/80">Cloud-stored. Always there. Instantly accessible.</p>
                     </div>
                 </div>
             </div>
@@ -1490,56 +1537,56 @@
                     Your Money. Tracked.<br>
                     <span class="gradient-text">Automatically.</span>
                 </h2>
-                <p class="text-xl text-purple-200/70 mb-12">No more end-of-month surprises. No more Excel fights with your partner doctor.</p>
+                <p class="text-xl text-purple-900/75 mb-12">No more end-of-month surprises. No more Excel fights with your partner doctor.</p>
                 
                 <div class="space-y-4 mb-10">
                     <div class="gradient-border rounded-xl p-5 flex gap-4 items-start">
-                        <iconify-icon icon="lucide:trending-up" class="text-2xl text-purple-400 mt-1"></iconify-icon>
+                        <iconify-icon icon="lucide:trending-up" class="text-2xl text-purple-600 mt-1"></iconify-icon>
                         <div>
                             <h3 class="font-semibold mb-1">Revenue Tracking</h3>
-                            <p class="text-purple-200/70">Every fee, every payment — recorded and categorized. Filter by doctor, date, method.</p>
+                            <p class="text-purple-900/75">Every fee, every payment — recorded and categorized. Filter by doctor, date, method.</p>
                         </div>
                     </div>
                     
                     <div class="gradient-border rounded-xl p-5 flex gap-4 items-start">
-                        <iconify-icon icon="lucide:receipt" class="text-2xl text-purple-400 mt-1"></iconify-icon>
+                        <iconify-icon icon="lucide:receipt" class="text-2xl text-purple-600 mt-1"></iconify-icon>
                         <div>
                             <h3 class="font-semibold mb-1">Expense Management</h3>
-                            <p class="text-purple-200/70">Log rent, salaries, supplies. Category-based. True net profit at a glance.</p>
+                            <p class="text-purple-900/75">Log rent, salaries, supplies. Category-based. True net profit at a glance.</p>
                         </div>
                     </div>
                     
-                    <div class="gradient-border rounded-xl p-5 border-purple-500/40 bg-purple-900/20">
-                        <iconify-icon icon="lucide:calculator" class="text-2xl text-purple-400 mt-1"></iconify-icon>
+                    <div class="gradient-border rounded-xl p-5 border-purple-300 bg-purple-100/80">
+                        <iconify-icon icon="lucide:calculator" class="text-2xl text-purple-600 mt-1"></iconify-icon>
                         <div>
                             <h3 class="font-semibold mb-1">Doctor Settlement Engine</h3>
-                            <p class="text-purple-200/70 mb-3">The feature doctors fight over manually. Set each doctor's model:</p>
+                            <p class="text-purple-900/75 mb-3">The feature doctors fight over manually. Set each doctor's model:</p>
                             <div class="flex flex-wrap gap-3 text-sm">
-                                <span class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-300">Independent</span>
-                                <span class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-300">Salary</span>
-                                <span class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-300">Commission/Share</span>
+                                <span class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-700">Independent</span>
+                                <span class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-700">Salary</span>
+                                <span class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-700">Commission/Share</span>
                             </div>
-                            <p class="text-purple-200/70 mt-3">One click generates settlement report. No Excel. No arguments.</p>
+                            <p class="text-purple-900/75 mt-3">One click generates settlement report. No Excel. No arguments.</p>
                         </div>
                     </div>
                     
                     <div class="gradient-border rounded-xl p-5 flex gap-4 items-start">
-                        <iconify-icon icon="lucide:bar-chart-3" class="text-2xl text-purple-400 mt-1"></iconify-icon>
+                        <iconify-icon icon="lucide:bar-chart-3" class="text-2xl text-purple-600 mt-1"></iconify-icon>
                         <div>
                             <h3 class="font-semibold mb-1">Financial Analytics</h3>
-                            <p class="text-purple-200/70">Revenue trends, discount leakage, payment breakdown, receivables aging. Dashboards that tell you when something's wrong.</p>
+                            <p class="text-purple-900/75">Revenue trends, discount leakage, payment breakdown, receivables aging. Dashboards that tell you when something's wrong.</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="grid md:grid-cols-2 gap-4">
                     <div class="pain-box">
-                        <p class="text-red-300/80 text-xs font-mono uppercase tracking-wider mb-2">Old way</p>
-                        <p class="text-red-200/80">"I think we made around 40,000 this month… or maybe 45,000?"</p>
+                        <p class="text-red-700 text-xs font-mono uppercase tracking-wider mb-2">Old way</p>
+                        <p class="text-red-800">"I think we made around 40,000 this month… or maybe 45,000?"</p>
                     </div>
                     <div class="solution-box">
-                        <p class="text-purple-300 text-xs font-mono uppercase tracking-wider mb-2">Medura Hub</p>
-                        <p class="text-purple-100/80">Exact number. Real-time. Breakdown by doctor, service, and day.</p>
+                        <p class="text-purple-700 text-xs font-mono uppercase tracking-wider mb-2">Medura Hub</p>
+                        <p class="text-purple-950/80">Exact number. Real-time. Breakdown by doctor, service, and day.</p>
                     </div>
                 </div>
             </div>
@@ -1556,52 +1603,52 @@
                     Never Run Out Mid-Procedure<br>
                     <span class="gradient-text">Again.</span>
                 </h2>
-                <p class="text-xl text-purple-200/70 mb-12">From dental anesthetic to surgical sutures — know exactly what you have, where, and when it expires.</p>
+                <p class="text-xl text-purple-900/75 mb-12">From dental anesthetic to surgical sutures — know exactly what you have, where, and when it expires.</p>
                 
                 <div class="grid md:grid-cols-2 gap-5 mb-10">
                     <div class="gradient-border rounded-xl p-6">
-                        <iconify-icon icon="lucide:box" class="text-2xl text-purple-400 mb-3"></iconify-icon>
+                        <iconify-icon icon="lucide:box" class="text-2xl text-purple-600 mb-3"></iconify-icon>
                         <h3 class="font-semibold mb-2">Stock Dashboard</h3>
-                        <p class="text-sm text-purple-200/70">All items with quantities, locations, supplier info. Filter: in-stock / low / out / expiring.</p>
+                        <p class="text-sm text-purple-900/75">All items with quantities, locations, supplier info. Filter: in-stock / low / out / expiring.</p>
                     </div>
                     
                     <div class="gradient-border rounded-xl p-6">
-                        <iconify-icon icon="lucide:alert-triangle" class="text-2xl text-purple-400 mb-3"></iconify-icon>
+                        <iconify-icon icon="lucide:alert-triangle" class="text-2xl text-purple-600 mb-3"></iconify-icon>
                         <h3 class="font-semibold mb-2">Low-Stock Alerts</h3>
-                        <p class="text-sm text-purple-200/70">Set minimum levels. Get alerted before you run out — not after.</p>
+                        <p class="text-sm text-purple-900/75">Set minimum levels. Get alerted before you run out — not after.</p>
                     </div>
                     
                     <div class="gradient-border rounded-xl p-6">
-                        <iconify-icon icon="lucide:shopping-cart" class="text-2xl text-purple-400 mb-3"></iconify-icon>
+                        <iconify-icon icon="lucide:shopping-cart" class="text-2xl text-purple-600 mb-3"></iconify-icon>
                         <h3 class="font-semibold mb-2">Purchase Orders</h3>
-                        <p class="text-sm text-purple-200/70">Create PO, receive items, track status. Full procurement cycle, no paper.</p>
+                        <p class="text-sm text-purple-900/75">Create PO, receive items, track status. Full procurement cycle, no paper.</p>
                     </div>
                     
                     <div class="gradient-border rounded-xl p-6">
-                        <iconify-icon icon="lucide:calendar-x" class="text-2xl text-purple-400 mb-3"></iconify-icon>
+                        <iconify-icon icon="lucide:calendar-x" class="text-2xl text-purple-600 mb-3"></iconify-icon>
                         <h3 class="font-semibold mb-2">Expiry Tracking</h3>
-                        <p class="text-sm text-purple-200/70">Items expiring in 30/60/90 days. Reduce waste. Stay compliant.</p>
+                        <p class="text-sm text-purple-900/75">Items expiring in 30/60/90 days. Reduce waste. Stay compliant.</p>
                     </div>
                 </div>
                 
-                <div class="gradient-border rounded-xl p-6 border-purple-500/40 bg-purple-900/20 mb-8">
+                <div class="gradient-border rounded-xl p-6 border-purple-300 bg-purple-100/80 mb-8">
                     <div class="flex items-start gap-4">
-                        <iconify-icon icon="lucide:link" class="text-2xl text-purple-400 mt-1"></iconify-icon>
+                        <iconify-icon icon="lucide:link" class="text-2xl text-purple-600 mt-1"></iconify-icon>
                         <div>
                             <h3 class="font-semibold mb-2">Procedure-to-Inventory Linking</h3>
-                            <p class="text-purple-200/70">Map procedures to materials. After each procedure, inventory auto-updates. Know exactly what your procedures cost.</p>
+                            <p class="text-purple-900/75">Map procedures to materials. After each procedure, inventory auto-updates. Know exactly what your procedures cost.</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="grid md:grid-cols-2 gap-4">
                     <div class="pain-box">
-                        <p class="text-red-300/80 text-xs font-mono uppercase tracking-wider mb-2">Old way</p>
-                        <p class="text-red-200/80">"Did someone take the last box of gloves? We're out of bonding agent mid-prep."</p>
+                        <p class="text-red-700 text-xs font-mono uppercase tracking-wider mb-2">Old way</p>
+                        <p class="text-red-800">"Did someone take the last box of gloves? We're out of bonding agent mid-prep."</p>
                     </div>
                     <div class="solution-box">
-                        <p class="text-purple-300 text-xs font-mono uppercase tracking-wider mb-2">Medura Hub</p>
-                        <p class="text-purple-100/80">Live stock count. Automated alerts. Procurement tracked.</p>
+                        <p class="text-purple-700 text-xs font-mono uppercase tracking-wider mb-2">Medura Hub</p>
+                        <p class="text-purple-950/80">Live stock count. Automated alerts. Procurement tracked.</p>
                     </div>
                 </div>
             </div>
@@ -1618,46 +1665,46 @@
                     Your Clinic Communicates Where<br>
                     <span class="gradient-text">Your Patients Already Are.</span>
                 </h2>
-                <p class="text-xl text-purple-200/70 mb-12">WhatsApp Cloud API — native integration. Not a third-party add-on.</p>
+                <p class="text-xl text-purple-900/75 mb-12">WhatsApp Cloud API — native integration. Not a third-party add-on.</p>
                 
                 <div class="space-y-4">
                     <div class="gradient-border rounded-xl p-6 flex gap-5 items-start">
-                        <iconify-icon icon="lucide:bell" class="text-3xl text-purple-400 mt-1"></iconify-icon>
+                        <iconify-icon icon="lucide:bell" class="text-3xl text-purple-600 mt-1"></iconify-icon>
                         <div>
                             <h3 class="font-semibold text-lg mb-2">Appointment Reminders</h3>
-                            <p class="text-purple-200/70">Automated WhatsApp reminders before each appointment. Reduce no-shows by up to 40%.</p>
+                            <p class="text-purple-900/75">Automated WhatsApp reminders before each appointment. Reduce no-shows by up to 40%.</p>
                         </div>
                     </div>
                     
                     <div class="gradient-border rounded-xl p-6 flex gap-5 items-start">
-                        <iconify-icon icon="lucide:file-text" class="text-3xl text-purple-400 mt-1"></iconify-icon>
+                        <iconify-icon icon="lucide:file-text" class="text-3xl text-purple-600 mt-1"></iconify-icon>
                         <div>
                             <h3 class="font-semibold text-lg mb-2">Prescription Delivery</h3>
-                            <p class="text-purple-200/70">Patient receives prescription on WhatsApp as PDF. They never lose it.</p>
+                            <p class="text-purple-900/75">Patient receives prescription on WhatsApp as PDF. They never lose it.</p>
                         </div>
                     </div>
                     
                     <div class="gradient-border rounded-xl p-6 flex gap-5 items-start">
-                        <iconify-icon icon="lucide:check-circle" class="text-3xl text-purple-400 mt-1"></iconify-icon>
+                        <iconify-icon icon="lucide:check-circle" class="text-3xl text-purple-600 mt-1"></iconify-icon>
                         <div>
                             <h3 class="font-semibold text-lg mb-2">Booking Confirmation</h3>
-                            <p class="text-purple-200/70">Instant confirmation with queue number, date, time, and clinic link.</p>
+                            <p class="text-purple-900/75">Instant confirmation with queue number, date, time, and clinic link.</p>
                         </div>
                     </div>
                     
                     <div class="gradient-border rounded-xl p-6 flex gap-5 items-start">
-                        <iconify-icon icon="lucide:reply" class="text-3xl text-purple-400 mt-1"></iconify-icon>
+                        <iconify-icon icon="lucide:reply" class="text-3xl text-purple-600 mt-1"></iconify-icon>
                         <div>
                             <h3 class="font-semibold text-lg mb-2">Two-Way Reply Tracking</h3>
-                            <p class="text-purple-200/70">Know if patient confirmed or cancelled — appointment status updates automatically.</p>
+                            <p class="text-purple-900/75">Know if patient confirmed or cancelled — appointment status updates automatically.</p>
                         </div>
                     </div>
                     
                     <div class="gradient-border rounded-xl p-6 flex gap-5 items-start">
-                        <iconify-icon icon="lucide:settings" class="text-3xl text-purple-400 mt-1"></iconify-icon>
+                        <iconify-icon icon="lucide:settings" class="text-3xl text-purple-600 mt-1"></iconify-icon>
                         <div>
                             <h3 class="font-semibold text-lg mb-2">Custom Notification Templates</h3>
-                            <p class="text-purple-200/70">Write your own messages. Personalize with patient name, clinic, doctor, appointment time.</p>
+                            <p class="text-purple-900/75">Write your own messages. Personalize with patient name, clinic, doctor, appointment time.</p>
                         </div>
                     </div>
                 </div>
@@ -1675,46 +1722,46 @@
                     You're Not Just a Clinic.<br>
                     <span class="gradient-text">You're a Medical Business.</span>
                 </h2>
-                <p class="text-xl text-purple-200/70 mb-12">Medura Hub scales with you — from solo practice to multi-branch center.</p>
+                <p class="text-xl text-purple-900/75 mb-12">Medura Hub scales with you — from solo practice to multi-branch center.</p>
                 
                 <div class="space-y-4 mb-10">
                     <div class="gradient-border rounded-xl p-5 flex gap-4 items-start">
-                        <iconify-icon icon="lucide:users" class="text-2xl text-purple-400 mt-1"></iconify-icon>
+                        <iconify-icon icon="lucide:users" class="text-2xl text-purple-600 mt-1"></iconify-icon>
                         <div>
                             <h3 class="font-semibold mb-1">Multi-Doctor Support</h3>
-                            <p class="text-purple-200/70">Add doctors as staff, colleagues, or associates. Each sees only their patients by default. Share if you choose.</p>
+                            <p class="text-purple-900/75">Add doctors as staff, colleagues, or associates. Each sees only their patients by default. Share if you choose.</p>
                         </div>
                     </div>
                     
                     <div class="gradient-border rounded-xl p-5 flex gap-4 items-start">
-                        <iconify-icon icon="lucide:arrow-left-right" class="text-2xl text-purple-400 mt-1"></iconify-icon>
+                        <iconify-icon icon="lucide:arrow-left-right" class="text-2xl text-purple-600 mt-1"></iconify-icon>
                         <div>
                             <h3 class="font-semibold mb-1">Clinic Switcher</h3>
-                            <p class="text-purple-200/70">Doctor working in two clinics switches in one click. No separate logins.</p>
+                            <p class="text-purple-900/75">Doctor working in two clinics switches in one click. No separate logins.</p>
                         </div>
                     </div>
                     
                     <div class="gradient-border rounded-xl p-5 flex gap-4 items-start">
-                        <iconify-icon icon="lucide:shield-check" class="text-2xl text-purple-400 mt-1"></iconify-icon>
+                        <iconify-icon icon="lucide:shield-check" class="text-2xl text-purple-600 mt-1"></iconify-icon>
                         <div>
                             <h3 class="font-semibold mb-1">Role-Based Permissions</h3>
-                            <p class="text-purple-200/70">Owner · Doctor · Receptionist — each sees exactly what they need, nothing they shouldn't.</p>
+                            <p class="text-purple-900/75">Owner · Doctor · Receptionist — each sees exactly what they need, nothing they shouldn't.</p>
                         </div>
                     </div>
                     
-                    <div class="gradient-border rounded-xl p-5 border-purple-500/40 bg-purple-900/20">
-                        <iconify-icon icon="lucide:lock" class="text-2xl text-purple-400 mt-1"></iconify-icon>
+                    <div class="gradient-border rounded-xl p-5 border-purple-300 bg-purple-100/80">
+                        <iconify-icon icon="lucide:lock" class="text-2xl text-purple-600 mt-1"></iconify-icon>
                         <div>
                             <h3 class="font-semibold mb-1">Row-Level Security</h3>
-                            <p class="text-purple-200/70">Not just a setting — enforced at database level. Patient A in Clinic A cannot be seen by Clinic B. Ever.</p>
+                            <p class="text-purple-900/75">Not just a setting — enforced at database level. Patient A in Clinic A cannot be seen by Clinic B. Ever.</p>
                         </div>
                     </div>
                     
                     <div class="gradient-border rounded-xl p-5 flex gap-4 items-start">
-                        <iconify-icon icon="lucide:mail" class="text-2xl text-purple-400 mt-1"></iconify-icon>
+                        <iconify-icon icon="lucide:mail" class="text-2xl text-purple-600 mt-1"></iconify-icon>
                         <div>
                             <h3 class="font-semibold mb-1">Staff Invitation System</h3>
-                            <p class="text-purple-200/70">Invite by email. They get secure link, create account, immediately assigned to your clinic.</p>
+                            <p class="text-purple-900/75">Invite by email. They get secure link, create account, immediately assigned to your clinic.</p>
                         </div>
                     </div>
                 </div>
@@ -1732,33 +1779,33 @@
                     Stop Guessing.<br>
                     <span class="gradient-text">Start Knowing.</span>
                 </h2>
-                <p class="text-xl text-purple-200/70 mb-12">Role-specific analytics that turn daily activity into real business decisions.</p>
+                <p class="text-xl text-purple-900/75 mb-12">Role-specific analytics that turn daily activity into real business decisions.</p>
                 
                 <div class="grid md:grid-cols-2 gap-6 mb-10">
                     <div class="gradient-border rounded-xl p-6">
                         <h3 class="font-semibold text-lg mb-4 flex items-center gap-2">
-                            <iconify-icon icon="lucide:stethoscope" class="text-purple-400"></iconify-icon>
+                            <iconify-icon icon="lucide:stethoscope" class="text-purple-600"></iconify-icon>
                             For Doctors
                         </h3>
-                        <ul class="space-y-2 text-purple-200/70">
+                        <ul class="space-y-2 text-purple-900/75">
                             <li class="flex items-start gap-2">
-                                <iconify-icon icon="lucide:check" class="text-purple-400 mt-1"></iconify-icon>
+                                <iconify-icon icon="lucide:check" class="text-purple-600 mt-1"></iconify-icon>
                                 Patient volume over time
                             </li>
                             <li class="flex items-start gap-2">
-                                <iconify-icon icon="lucide:check" class="text-purple-400 mt-1"></iconify-icon>
+                                <iconify-icon icon="lucide:check" class="text-purple-600 mt-1"></iconify-icon>
                                 Top procedures performed
                             </li>
                             <li class="flex items-start gap-2">
-                                <iconify-icon icon="lucide:check" class="text-purple-400 mt-1"></iconify-icon>
+                                <iconify-icon icon="lucide:check" class="text-purple-600 mt-1"></iconify-icon>
                                 Clinical time breakdown
                             </li>
                             <li class="flex items-start gap-2">
-                                <iconify-icon icon="lucide:check" class="text-purple-400 mt-1"></iconify-icon>
+                                <iconify-icon icon="lucide:check" class="text-purple-600 mt-1"></iconify-icon>
                                 Goal tracking
                             </li>
                             <li class="flex items-start gap-2">
-                                <iconify-icon icon="lucide:check" class="text-purple-400 mt-1"></iconify-icon>
+                                <iconify-icon icon="lucide:check" class="text-purple-600 mt-1"></iconify-icon>
                                 Revenue share per doctor
                             </li>
                         </ul>
@@ -1766,39 +1813,39 @@
                     
                     <div class="gradient-border rounded-xl p-6">
                         <h3 class="font-semibold text-lg mb-4 flex items-center gap-2">
-                            <iconify-icon icon="lucide:crown" class="text-purple-400"></iconify-icon>
+                            <iconify-icon icon="lucide:crown" class="text-purple-600"></iconify-icon>
                             For Clinic Owners
                         </h3>
-                        <ul class="space-y-2 text-purple-200/70">
+                        <ul class="space-y-2 text-purple-900/75">
                             <li class="flex items-start gap-2">
-                                <iconify-icon icon="lucide:check" class="text-purple-400 mt-1"></iconify-icon>
+                                <iconify-icon icon="lucide:check" class="text-purple-600 mt-1"></iconify-icon>
                                 Overall clinic growth trends
                             </li>
                             <li class="flex items-start gap-2">
-                                <iconify-icon icon="lucide:check" class="text-purple-400 mt-1"></iconify-icon>
+                                <iconify-icon icon="lucide:check" class="text-purple-600 mt-1"></iconify-icon>
                                 Staff adoption rates
                             </li>
                             <li class="flex items-start gap-2">
-                                <iconify-icon icon="lucide:check" class="text-purple-400 mt-1"></iconify-icon>
+                                <iconify-icon icon="lucide:check" class="text-purple-600 mt-1"></iconify-icon>
                                 Financial performance
                             </li>
                             <li class="flex items-start gap-2">
-                                <iconify-icon icon="lucide:check" class="text-purple-400 mt-1"></iconify-icon>
+                                <iconify-icon icon="lucide:check" class="text-purple-600 mt-1"></iconify-icon>
                                 Alert rules for anomalies
                             </li>
                             <li class="flex items-start gap-2">
-                                <iconify-icon icon="lucide:check" class="text-purple-400 mt-1"></iconify-icon>
+                                <iconify-icon icon="lucide:check" class="text-purple-600 mt-1"></iconify-icon>
                                 Support operations tracking
                             </li>
                         </ul>
                     </div>
                 </div>
                 
-                <div class="p-8 rounded-xl bg-gradient-to-r from-purple-900/30 to-purple-800/10 border border-purple-500/30">
-                    <p class="text-lg text-purple-100 text-center">
+                <div class="p-8 rounded-xl bg-gradient-to-r from-purple-900/30 to-purple-800/10 border border-purple-300">
+                    <p class="text-lg text-purple-950 text-center">
                         Most systems show you a chart. <span class="font-semibold gradient-text">We show you what to do about it.</span>
                     </p>
-                    <p class="text-purple-200/70 text-center mt-2">Insights and alert rules surface exceptions automatically — so you act, not just observe.</p>
+                    <p class="text-purple-900/75 text-center mt-2">Insights and alert rules surface exceptions automatically — so you act, not just observe.</p>
                 </div>
             </div>
         </div>
@@ -1814,46 +1861,46 @@
                     Your Patients' Data Is Sacred.<br>
                     <span class="gradient-text">We Treat It That Way.</span>
                 </h2>
-                <p class="text-xl text-purple-200/70 mb-12">Enterprise-grade security — in a product built for a single-doctor clinic.</p>
+                <p class="text-xl text-purple-900/75 mb-12">Enterprise-grade security — in a product built for a single-doctor clinic.</p>
                 
                 <div class="space-y-4">
                     <div class="gradient-border rounded-xl p-6 flex gap-5 items-start">
-                        <iconify-icon icon="lucide:database-zap" class="text-3xl text-purple-400 mt-1"></iconify-icon>
+                        <iconify-icon icon="lucide:database-zap" class="text-3xl text-purple-600 mt-1"></iconify-icon>
                         <div>
                             <h3 class="font-semibold text-lg mb-2">Row-Level Security (RLS)</h3>
-                            <p class="text-purple-200/70">Every database query filtered by clinic membership. One clinic's data is mathematically inaccessible to another. This isn't a setting — it's the architecture.</p>
+                            <p class="text-purple-900/75">Every database query filtered by clinic membership. One clinic's data is mathematically inaccessible to another. This isn't a setting — it's the architecture.</p>
                         </div>
                     </div>
 
                     <div class="gradient-border rounded-xl p-6 flex gap-5 items-start">
-                        <iconify-icon icon="lucide:lock" class="text-3xl text-purple-400 mt-1"></iconify-icon>
+                        <iconify-icon icon="lucide:lock" class="text-3xl text-purple-600 mt-1"></iconify-icon>
                         <div>
                             <h3 class="font-semibold text-lg mb-2">Secure File Access</h3>
-                            <p class="text-purple-200/70">Lab results, X-rays stored with time-limited presigned URLs. Nobody can share a link forever.</p>
+                            <p class="text-purple-900/75">Lab results, X-rays stored with time-limited presigned URLs. Nobody can share a link forever.</p>
                         </div>
                     </div>
 
                     <div class="gradient-border rounded-xl p-6 flex gap-5 items-start">
-                        <iconify-icon icon="lucide:shield" class="text-3xl text-purple-400 mt-1"></iconify-icon>
+                        <iconify-icon icon="lucide:shield" class="text-3xl text-purple-600 mt-1"></iconify-icon>
                         <div>
                             <h3 class="font-semibold text-lg mb-2">Strict Role Isolation</h3>
-                            <p class="text-purple-200/70">Reception cannot see clinical notes. Associated doctors cannot see financial settlements. Defined, enforced boundaries.</p>
+                            <p class="text-purple-900/75">Reception cannot see clinical notes. Associated doctors cannot see financial settlements. Defined, enforced boundaries.</p>
                         </div>
                     </div>
 
                     <div class="gradient-border rounded-xl p-6 flex gap-5 items-start">
-                        <iconify-icon icon="lucide:gauge" class="text-3xl text-purple-400 mt-1"></iconify-icon>
+                        <iconify-icon icon="lucide:gauge" class="text-3xl text-purple-600 mt-1"></iconify-icon>
                         <div>
                             <h3 class="font-semibold text-lg mb-2">Rate Limiting on Public Pages</h3>
-                            <p class="text-purple-200/70">Booking pages and chatbots protected from abuse. Your public presence is secure.</p>
+                            <p class="text-purple-900/75">Booking pages and chatbots protected from abuse. Your public presence is secure.</p>
                         </div>
                     </div>
 
                     <div class="gradient-border rounded-xl p-6 flex gap-5 items-start">
-                        <iconify-icon icon="lucide:history" class="text-3xl text-purple-400 mt-1"></iconify-icon>
+                        <iconify-icon icon="lucide:history" class="text-3xl text-purple-600 mt-1"></iconify-icon>
                         <div>
                             <h3 class="font-semibold text-lg mb-2">Soft-Delete & Audit Trail</h3>
-                            <p class="text-purple-200/70">Nothing deleted permanently. Every action traceable. Compliance-ready.</p>
+                            <p class="text-purple-900/75">Nothing deleted permanently. Every action traceable. Compliance-ready.</p>
                         </div>
                     </div>
                 </div>
@@ -1871,48 +1918,48 @@
                     The Only Clinic System Where Arabic<br>
                     <span class="gradient-text">Is a First-Class Language.</span>
                 </h2>
-                <p class="text-xl text-purple-200/70 mb-12">Full RTL Arabic and LTR English — across every screen, form, and notification.</p>
+                <p class="text-xl text-purple-900/75 mb-12">Full RTL Arabic and LTR English — across every screen, form, and notification.</p>
                 
                 <div class="grid md:grid-cols-2 gap-5 mb-10">
                     <div class="gradient-border rounded-xl p-6 text-center">
                         <p class="text-3xl font-serif mb-2">مريض جديد</p>
-                        <p class="text-sm text-purple-300">New Patient</p>
+                        <p class="text-sm text-purple-700">New Patient</p>
                     </div>
                     <div class="gradient-border rounded-xl p-6 text-center">
                         <p class="text-3xl font-serif mb-2">وصفة طبية</p>
-                        <p class="text-sm text-purple-300">Prescription</p>
+                        <p class="text-sm text-purple-700">Prescription</p>
                     </div>
                     <div class="gradient-border rounded-xl p-6 text-center">
                         <p class="text-3xl font-serif mb-2">موعد قادم</p>
-                        <p class="text-sm text-purple-300">Upcoming Appointment</p>
+                        <p class="text-sm text-purple-700">Upcoming Appointment</p>
                     </div>
                     <div class="gradient-border rounded-xl p-6 text-center">
                         <p class="text-3xl font-serif mb-2">التقرير المالي</p>
-                        <p class="text-sm text-purple-300">Financial Report</p>
+                        <p class="text-sm text-purple-700">Financial Report</p>
                     </div>
                 </div>
                 
                 <div class="space-y-3 mb-10">
                     <div class="flex items-center gap-3">
-                        <iconify-icon icon="lucide:check-circle" class="text-purple-400"></iconify-icon>
-                        <p class="text-purple-200/80">Dashboards, menus, forms — fully translated, not just labels</p>
+                        <iconify-icon icon="lucide:check-circle" class="text-purple-600"></iconify-icon>
+                        <p class="text-purple-900/80">Dashboards, menus, forms — fully translated, not just labels</p>
                     </div>
                     <div class="flex items-center gap-3">
-                        <iconify-icon icon="lucide:check-circle" class="text-purple-400"></iconify-icon>
-                        <p class="text-purple-200/80">Voice transcription designed for Arabic clinical speech</p>
+                        <iconify-icon icon="lucide:check-circle" class="text-purple-600"></iconify-icon>
+                        <p class="text-purple-900/80">Voice transcription designed for Arabic clinical speech</p>
                     </div>
                     <div class="flex items-center gap-3">
-                        <iconify-icon icon="lucide:check-circle" class="text-purple-400"></iconify-icon>
-                        <p class="text-purple-200/80">Prescriptions and documents print correctly in Arabic RTL</p>
+                        <iconify-icon icon="lucide:check-circle" class="text-purple-600"></iconify-icon>
+                        <p class="text-purple-900/80">Prescriptions and documents print correctly in Arabic RTL</p>
                     </div>
                     <div class="flex items-center gap-3">
-                        <iconify-icon icon="lucide:check-circle" class="text-purple-400"></iconify-icon>
-                        <p class="text-purple-200/80">Staff can work in their preferred language independently</p>
+                        <iconify-icon icon="lucide:check-circle" class="text-purple-600"></iconify-icon>
+                        <p class="text-purple-900/80">Staff can work in their preferred language independently</p>
                     </div>
                 </div>
                 
-                <div class="p-8 rounded-xl bg-gradient-to-r from-purple-900/30 to-purple-800/10 border border-purple-500/30">
-                    <p class="text-lg text-purple-100 text-center font-medium">
+                <div class="p-8 rounded-xl bg-gradient-to-r from-purple-900/30 to-purple-800/10 border border-purple-300">
+                    <p class="text-lg text-purple-950 text-center font-medium">
                         Egyptian clinics operate in Arabic. Their software should too.<br>
                         <span class="gradient-text">Not a setting you flip. A product built that way from day one.</span>
                     </p>
@@ -1931,55 +1978,55 @@
                     Running Multiple Clinics?<br>
                     <span class="gradient-text">You Have a Control Tower.</span>
                 </h2>
-                <p class="text-xl text-purple-200/70 mb-12">The Admin Console gives platform operators complete operational control.</p>
+                <p class="text-xl text-purple-900/75 mb-12">The Admin Console gives platform operators complete operational control.</p>
                 
                 <div class="grid md:grid-cols-2 gap-4">
                     <div class="gradient-border rounded-xl p-5">
-                        <iconify-icon icon="lucide:building" class="text-xl text-purple-400 mb-2"></iconify-icon>
+                        <iconify-icon icon="lucide:building" class="text-xl text-purple-600 mb-2"></iconify-icon>
                         <h3 class="font-semibold mb-1">Clinic Management</h3>
-                        <p class="text-sm text-purple-200/60">Create, suspend, configure any clinic</p>
+                        <p class="text-sm text-purple-800/70">Create, suspend, configure any clinic</p>
                     </div>
                     
                     <div class="gradient-border rounded-xl p-5">
-                        <iconify-icon icon="lucide:credit-card" class="text-xl text-purple-400 mb-2"></iconify-icon>
+                        <iconify-icon icon="lucide:credit-card" class="text-xl text-purple-600 mb-2"></iconify-icon>
                         <h3 class="font-semibold mb-1">Subscription Management</h3>
-                        <p class="text-sm text-purple-200/60">Upgrade, downgrade, extend, trial</p>
+                        <p class="text-sm text-purple-800/70">Upgrade, downgrade, extend, trial</p>
                     </div>
                     
                     <div class="gradient-border rounded-xl p-5">
-                        <iconify-icon icon="lucide:package" class="text-xl text-purple-400 mb-2"></iconify-icon>
+                        <iconify-icon icon="lucide:package" class="text-xl text-purple-600 mb-2"></iconify-icon>
                         <h3 class="font-semibold mb-1">Plan Catalog</h3>
-                        <p class="text-sm text-purple-200/60">Define features, limits, credit packs per plan</p>
+                        <p class="text-sm text-purple-800/70">Define features, limits, credit packs per plan</p>
                     </div>
                     
                     <div class="gradient-border rounded-xl p-5">
-                        <iconify-icon icon="lucide:brain" class="text-xl text-purple-400 mb-2"></iconify-icon>
+                        <iconify-icon icon="lucide:brain" class="text-xl text-purple-600 mb-2"></iconify-icon>
                         <h3 class="font-semibold mb-1">AI Settings</h3>
-                        <p class="text-sm text-purple-200/60">Control which AI tasks enabled per clinic, with budgets</p>
+                        <p class="text-sm text-purple-800/70">Control which AI tasks enabled per clinic, with budgets</p>
                     </div>
                     
                     <div class="gradient-border rounded-xl p-5">
-                        <iconify-icon icon="lucide:bell" class="text-xl text-purple-400 mb-2"></iconify-icon>
+                        <iconify-icon icon="lucide:bell" class="text-xl text-purple-600 mb-2"></iconify-icon>
                         <h3 class="font-semibold mb-1">Platform Notifications</h3>
-                        <p class="text-sm text-purple-200/60">Broadcast to all or selected clinics</p>
+                        <p class="text-sm text-purple-800/70">Broadcast to all or selected clinics</p>
                     </div>
                     
                     <div class="gradient-border rounded-xl p-5">
-                        <iconify-icon icon="lucide:ticket" class="text-xl text-purple-400 mb-2"></iconify-icon>
+                        <iconify-icon icon="lucide:ticket" class="text-xl text-purple-600 mb-2"></iconify-icon>
                         <h3 class="font-semibold mb-1">Invite Codes</h3>
-                        <p class="text-sm text-purple-200/60">Control who can sign up</p>
+                        <p class="text-sm text-purple-800/70">Control who can sign up</p>
                     </div>
                     
                     <div class="gradient-border rounded-xl p-5">
-                        <iconify-icon icon="lucide:hard-drive" class="text-xl text-purple-400 mb-2"></iconify-icon>
+                        <iconify-icon icon="lucide:hard-drive" class="text-xl text-purple-600 mb-2"></iconify-icon>
                         <h3 class="font-semibold mb-1">Storage Rules</h3>
-                        <p class="text-sm text-purple-200/60">Set storage quotas by plan</p>
+                        <p class="text-sm text-purple-800/70">Set storage quotas by plan</p>
                     </div>
                     
                     <div class="gradient-border rounded-xl p-5">
-                        <iconify-icon icon="lucide:headphones" class="text-xl text-purple-400 mb-2"></iconify-icon>
+                        <iconify-icon icon="lucide:headphones" class="text-xl text-purple-600 mb-2"></iconify-icon>
                         <h3 class="font-semibold mb-1">Support Tickets</h3>
-                        <p class="text-sm text-purple-200/60">Respond to clinic issues from admin panel</p>
+                        <p class="text-sm text-purple-800/70">Respond to clinic issues from admin panel</p>
                     </div>
                 </div>
             </div>
@@ -1999,32 +2046,32 @@
                 
                 <div class="grid md:grid-cols-3 gap-8">
                     <div class="gradient-border rounded-2xl p-8 card-hover">
-                        <iconify-icon icon="lucide:stethoscope" class="text-4xl text-purple-400 mb-4 block"></iconify-icon>
+                        <iconify-icon icon="lucide:stethoscope" class="text-4xl text-purple-600 mb-4 block"></iconify-icon>
                         <h3 class="text-2xl font-bold mb-4">The Solo Doctor</h3>
-                        <p class="text-purple-200/70 mb-6">You run everything. You see 20–30 patients per day. You're exhausted by 3PM.</p>
-                        <p class="text-purple-100/90">Medura Hub automates the paperwork so you spend energy on medicine — not administration.</p>
-                        <div class="mt-6 pt-4 border-t border-purple-500/20">
-                            <p class="text-sm text-purple-400">Best plan: <span class="text-purple-300 font-semibold">Starter</span></p>
+                        <p class="text-purple-900/75 mb-6">You run everything. You see 20–30 patients per day. You're exhausted by 3PM.</p>
+                        <p class="text-purple-950/90">Medura Hub automates the paperwork so you spend energy on medicine — not administration.</p>
+                        <div class="mt-6 pt-4 border-t border-purple-200">
+                            <p class="text-sm text-purple-600">Best plan: <span class="text-purple-700 font-semibold">Starter</span></p>
                         </div>
                     </div>
                     
-                    <div class="gradient-border rounded-2xl p-8 card-hover border-purple-500/40">
-                        <iconify-icon icon="lucide:building-2" class="text-4xl text-purple-400 mb-4 block"></iconify-icon>
+                    <div class="gradient-border rounded-2xl p-8 card-hover border-purple-300">
+                        <iconify-icon icon="lucide:building-2" class="text-4xl text-purple-600 mb-4 block"></iconify-icon>
                         <h3 class="text-2xl font-bold mb-4">The Polyclinic Owner</h3>
-                        <p class="text-purple-200/70 mb-6">You have 3–5 doctors and a reception team. The month-end accounting is a nightmare.</p>
-                        <p class="text-purple-100/90">Medura Hub gives each doctor their workspace, calculates settlements automatically, and gives you a full financial picture.</p>
-                        <div class="mt-6 pt-4 border-t border-purple-500/20">
-                            <p class="text-sm text-purple-400">Best plan: <span class="text-purple-300 font-semibold">Growth or Pro</span></p>
+                        <p class="text-purple-900/75 mb-6">You have 3–5 doctors and a reception team. The month-end accounting is a nightmare.</p>
+                        <p class="text-purple-950/90">Medura Hub gives each doctor their workspace, calculates settlements automatically, and gives you a full financial picture.</p>
+                        <div class="mt-6 pt-4 border-t border-purple-200">
+                            <p class="text-sm text-purple-600">Best plan: <span class="text-purple-700 font-semibold">Growth or Pro</span></p>
                         </div>
                     </div>
                     
                     <div class="gradient-border rounded-2xl p-8 card-hover">
-                        <iconify-icon icon="lucide:smile" class="text-4xl text-purple-400 mb-4 block"></iconify-icon>
+                        <iconify-icon icon="lucide:smile" class="text-4xl text-purple-600 mb-4 block"></iconify-icon>
                         <h3 class="text-2xl font-bold mb-4">The Dental Specialist</h3>
-                        <p class="text-purple-200/70 mb-6">You need a real odontogram. A treatment planning system. Lab order management.</p>
-                        <p class="text-purple-100/90">You've been making do with generic software. Medura Hub has a dedicated dental module built from the ground up.</p>
-                        <div class="mt-6 pt-4 border-t border-purple-500/20">
-                            <p class="text-sm text-purple-400">Best plan: <span class="text-purple-300 font-semibold">Growth (Dental)</span></p>
+                        <p class="text-purple-900/75 mb-6">You need a real odontogram. A treatment planning system. Lab order management.</p>
+                        <p class="text-purple-950/90">You've been making do with generic software. Medura Hub has a dedicated dental module built from the ground up.</p>
+                        <div class="mt-6 pt-4 border-t border-purple-200">
+                            <p class="text-sm text-purple-600">Best plan: <span class="text-purple-700 font-semibold">Growth (Dental)</span></p>
                         </div>
                     </div>
                 </div>
@@ -2051,7 +2098,7 @@
                                     <th>Feature</th>
                                     <th>Smart Clinic</th>
                                     <th>Dentolize</th>
-                                    <th class="bg-purple-900/40">Medura Hub</th>
+                                    <th class="bg-purple-200/60">Medura Hub</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -2059,63 +2106,63 @@
                                     <td class="font-medium">AI Clinical Tools</td>
                                     <td class="table-partial"><iconify-icon icon="lucide:zap" class="align-[-2px] mr-1"></iconify-icon>Basic credits</td>
                                     <td class="table-partial"><iconify-icon icon="lucide:clock" class="align-[-2px] mr-1"></iconify-icon>Coming soon</td>
-                                    <td class="bg-purple-900/20 text-purple-300 font-semibold"><iconify-icon icon="lucide:check" class="align-[-2px] mr-1"></iconify-icon>6 active AI tasks</td>
+                                    <td class="bg-purple-100/80 text-purple-700 font-semibold"><iconify-icon icon="lucide:check" class="align-[-2px] mr-1"></iconify-icon>6 active AI tasks</td>
                                 </tr>
                                 <tr>
                                     <td class="font-medium">Arabic RTL</td>
                                     <td class="table-partial"><iconify-icon icon="lucide:check" class="align-[-2px] mr-1"></iconify-icon>Partial</td>
                                     <td class="table-check"><iconify-icon icon="lucide:check" class="align-[-2px]"></iconify-icon></td>
-                                    <td class="bg-purple-900/20 text-purple-300 font-semibold"><iconify-icon icon="lucide:check" class="align-[-2px] mr-1"></iconify-icon>Full, native</td>
+                                    <td class="bg-purple-100/80 text-purple-700 font-semibold"><iconify-icon icon="lucide:check" class="align-[-2px] mr-1"></iconify-icon>Full, native</td>
                                 </tr>
                                 <tr>
                                     <td class="font-medium">Dental Odontogram</td>
                                     <td class="table-cross"><iconify-icon icon="lucide:x" class="align-[-2px]"></iconify-icon></td>
                                     <td class="table-check"><iconify-icon icon="lucide:check" class="align-[-2px]"></iconify-icon></td>
-                                    <td class="bg-purple-900/20 text-purple-300 font-semibold"><iconify-icon icon="lucide:check" class="align-[-2px]"></iconify-icon></td>
+                                    <td class="bg-purple-100/80 text-purple-700 font-semibold"><iconify-icon icon="lucide:check" class="align-[-2px]"></iconify-icon></td>
                                 </tr>
                                 <tr>
                                     <td class="font-medium">Multi-Doctor RLS</td>
                                     <td class="table-partial"><iconify-icon icon="lucide:minus" class="align-[-2px] mr-1"></iconify-icon>Limited</td>
                                     <td class="table-partial"><iconify-icon icon="lucide:minus" class="align-[-2px] mr-1"></iconify-icon>Limited</td>
-                                    <td class="bg-purple-900/20 text-purple-300 font-semibold"><iconify-icon icon="lucide:check" class="align-[-2px] mr-1"></iconify-icon>Database-level</td>
+                                    <td class="bg-purple-100/80 text-purple-700 font-semibold"><iconify-icon icon="lucide:check" class="align-[-2px] mr-1"></iconify-icon>Database-level</td>
                                 </tr>
                                 <tr>
                                     <td class="font-medium">AI Voice Dictation</td>
                                     <td class="table-cross"><iconify-icon icon="lucide:x" class="align-[-2px]"></iconify-icon></td>
                                     <td class="table-cross"><iconify-icon icon="lucide:x" class="align-[-2px]"></iconify-icon></td>
-                                    <td class="bg-purple-900/20 text-purple-300 font-semibold"><iconify-icon icon="lucide:check" class="align-[-2px] mr-1"></iconify-icon>Arabic</td>
+                                    <td class="bg-purple-100/80 text-purple-700 font-semibold"><iconify-icon icon="lucide:check" class="align-[-2px] mr-1"></iconify-icon>Arabic</td>
                                 </tr>
                                 <tr>
                                     <td class="font-medium">Analytics Depth</td>
-                                    <td class="text-purple-200/60">Basic</td>
-                                    <td class="text-purple-200/60">Medium</td>
-                                    <td class="bg-purple-900/20 text-purple-300 font-semibold"><iconify-icon icon="lucide:check" class="align-[-2px] mr-1"></iconify-icon>Role-specific</td>
+                                    <td class="text-purple-800/70">Basic</td>
+                                    <td class="text-purple-800/70">Medium</td>
+                                    <td class="bg-purple-100/80 text-purple-700 font-semibold"><iconify-icon icon="lucide:check" class="align-[-2px] mr-1"></iconify-icon>Role-specific</td>
                                 </tr>
                                 <tr>
                                     <td class="font-medium">Public AI Chatbot</td>
-                                    <td class="text-purple-200/60">WhatsApp only</td>
-                                    <td class="text-purple-200/60">WhatsApp add-on</td>
-                                    <td class="bg-purple-900/20 text-purple-300 font-semibold"><iconify-icon icon="lucide:check" class="align-[-2px] mr-1"></iconify-icon>Built in</td>
+                                    <td class="text-purple-800/70">WhatsApp only</td>
+                                    <td class="text-purple-800/70">WhatsApp add-on</td>
+                                    <td class="bg-purple-100/80 text-purple-700 font-semibold"><iconify-icon icon="lucide:check" class="align-[-2px] mr-1"></iconify-icon>Built in</td>
                                 </tr>
                                 <tr>
                                     <td class="font-medium">Inventory</td>
-                                    <td class="text-purple-200/60">Large plan only</td>
-                                    <td class="text-purple-200/60">Add-on</td>
-                                    <td class="bg-purple-900/20 text-purple-300 font-semibold"><iconify-icon icon="lucide:check" class="align-[-2px] mr-1"></iconify-icon>Included</td>
+                                    <td class="text-purple-800/70">Large plan only</td>
+                                    <td class="text-purple-800/70">Add-on</td>
+                                    <td class="bg-purple-100/80 text-purple-700 font-semibold"><iconify-icon icon="lucide:check" class="align-[-2px] mr-1"></iconify-icon>Included</td>
                                 </tr>
                                 <tr>
                                     <td class="font-medium">Pricing (annual)</td>
-                                    <td class="font-mono text-purple-200/60">10K–25K EGP</td>
-                                    <td class="font-mono text-purple-200/60">17K–26K EGP</td>
-                                    <td class="bg-purple-900/20 text-purple-300 font-semibold font-mono">9K–23K EGP</td>
+                                    <td class="font-mono text-purple-800/70">10K–25K EGP</td>
+                                    <td class="font-mono text-purple-800/70">17K–26K EGP</td>
+                                    <td class="bg-purple-100/80 text-purple-700 font-semibold font-mono">9K–23K EGP</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
                 
-                <div class="p-6 rounded-xl bg-purple-900/20 border border-purple-500/30">
-                    <p class="text-center text-purple-100">
+                <div class="p-6 rounded-xl bg-purple-100/80 border border-purple-300">
+                    <p class="text-center text-purple-950">
                         We're not the cheapest. <span class="gradient-text font-semibold">We're the most complete — at a price that respects your budget.</span>
                     </p>
                 </div>
@@ -2133,43 +2180,43 @@
                     Simple Pricing.<br>
                     <span class="gradient-text">No Surprises.</span>
                 </h2>
-                <p class="text-lg text-purple-200/70 mb-12">All plans annual. All include onboarding support. All include 30-day money-back guarantee.</p>
+                <p class="text-lg text-purple-900/75 mb-12">All plans annual. All include onboarding support. All include 30-day money-back guarantee.</p>
                 
                 <div class="grid md:grid-cols-3 gap-6">
                     <div class="pricing-card">
                         <h3 class="text-xl font-bold mb-2">STARTER</h3>
-                        <p class="text-sm text-purple-400 mb-6">For the solo doctor</p>
+                        <p class="text-sm text-purple-600 mb-6">For the solo doctor</p>
                         <div class="mb-6">
                             <span class="text-4xl font-bold font-mono gradient-text">9,000–11,000</span>
-                            <span class="text-purple-400 ml-2">EGP / year</span>
+                            <span class="text-purple-600 ml-2">EGP / year</span>
                         </div>
-                        <ul class="space-y-3 text-sm text-purple-200/80">
+                        <ul class="space-y-3 text-sm text-purple-900/80">
                             <li class="flex items-start gap-2">
-                                <iconify-icon icon="lucide:check" class="text-purple-400 mt-0.5"></iconify-icon>
+                                <iconify-icon icon="lucide:check" class="text-purple-600 mt-0.5"></iconify-icon>
                                 1 Branch · 1 Doctor · Up to 6 Users
                             </li>
                             <li class="flex items-start gap-2">
-                                <iconify-icon icon="lucide:check" class="text-purple-400 mt-0.5"></iconify-icon>
+                                <iconify-icon icon="lucide:check" class="text-purple-600 mt-0.5"></iconify-icon>
                                 Full EHR, Prescriptions, Appointments
                             </li>
                             <li class="flex items-start gap-2">
-                                <iconify-icon icon="lucide:check" class="text-purple-400 mt-0.5"></iconify-icon>
+                                <iconify-icon icon="lucide:check" class="text-purple-600 mt-0.5"></iconify-icon>
                                 Basic AI (limited monthly usage)
                             </li>
                             <li class="flex items-start gap-2">
-                                <iconify-icon icon="lucide:check" class="text-purple-400 mt-0.5"></iconify-icon>
+                                <iconify-icon icon="lucide:check" class="text-purple-600 mt-0.5"></iconify-icon>
                                 WhatsApp Notifications
                             </li>
                             <li class="flex items-start gap-2">
-                                <iconify-icon icon="lucide:check" class="text-purple-400 mt-0.5"></iconify-icon>
+                                <iconify-icon icon="lucide:check" class="text-purple-600 mt-0.5"></iconify-icon>
                                 Online Booking Page
                             </li>
                             <li class="flex items-start gap-2">
-                                <iconify-icon icon="lucide:check" class="text-purple-400 mt-0.5"></iconify-icon>
+                                <iconify-icon icon="lucide:check" class="text-purple-600 mt-0.5"></iconify-icon>
                                 Finance & Basic Analytics
                             </li>
                             <li class="flex items-start gap-2">
-                                <iconify-icon icon="lucide:check" class="text-purple-400 mt-0.5"></iconify-icon>
+                                <iconify-icon icon="lucide:check" class="text-purple-600 mt-0.5"></iconify-icon>
                                 Inventory
                             </li>
                         </ul>
@@ -2178,40 +2225,40 @@
                     <div class="pricing-card featured">
                         <div class="flex items-center gap-2 mb-2">
                             <h3 class="text-xl font-bold">GROWTH</h3>
-                            <span class="text-xs bg-purple-500/30 text-purple-300 px-2 py-1 rounded-full">Most Popular</span>
+                            <span class="text-xs bg-purple-500/30 text-purple-700 px-2 py-1 rounded-full">Most Popular</span>
                         </div>
-                        <p class="text-sm text-purple-300 mb-6">For growing clinics</p>
+                        <p class="text-sm text-purple-700 mb-6">For growing clinics</p>
                         <div class="mb-6">
                             <span class="text-4xl font-bold font-mono gradient-text">14,000–16,000</span>
-                            <span class="text-purple-300 ml-2">EGP / year</span>
+                            <span class="text-purple-700 ml-2">EGP / year</span>
                         </div>
-                        <ul class="space-y-3 text-sm text-purple-100/90">
+                        <ul class="space-y-3 text-sm text-purple-950/90">
                             <li class="flex items-start gap-2">
-                                <iconify-icon icon="lucide:check" class="text-purple-400 mt-0.5"></iconify-icon>
+                                <iconify-icon icon="lucide:check" class="text-purple-600 mt-0.5"></iconify-icon>
                                 1 Branch · Up to 3 Doctors · Up to 12 Users
                             </li>
                             <li class="flex items-start gap-2">
-                                <iconify-icon icon="lucide:check" class="text-purple-400 mt-0.5"></iconify-icon>
+                                <iconify-icon icon="lucide:check" class="text-purple-600 mt-0.5"></iconify-icon>
                                 <span class="font-medium">Everything in Starter, plus:</span>
                             </li>
                             <li class="flex items-start gap-2">
-                                <iconify-icon icon="lucide:check" class="text-purple-400 mt-0.5"></iconify-icon>
-                                <span class="font-semibold text-purple-300">Full AI Suite</span> (Dictation + Summaries + Diagnosis)
+                                <iconify-icon icon="lucide:check" class="text-purple-600 mt-0.5"></iconify-icon>
+                                <span class="font-semibold text-purple-700">Full AI Suite</span> (Dictation + Summaries + Diagnosis)
                             </li>
                             <li class="flex items-start gap-2">
-                                <iconify-icon icon="lucide:check" class="text-purple-400 mt-0.5"></iconify-icon>
-                                <span class="font-semibold text-purple-300">Dental Module</span> (Odontogram + Treatment Plans + Lab Orders)
+                                <iconify-icon icon="lucide:check" class="text-purple-600 mt-0.5"></iconify-icon>
+                                <span class="font-semibold text-purple-700">Dental Module</span> (Odontogram + Treatment Plans + Lab Orders)
                             </li>
                             <li class="flex items-start gap-2">
-                                <iconify-icon icon="lucide:check" class="text-purple-400 mt-0.5"></iconify-icon>
+                                <iconify-icon icon="lucide:check" class="text-purple-600 mt-0.5"></iconify-icon>
                                 Advanced Analytics
                             </li>
                             <li class="flex items-start gap-2">
-                                <iconify-icon icon="lucide:check" class="text-purple-400 mt-0.5"></iconify-icon>
+                                <iconify-icon icon="lucide:check" class="text-purple-600 mt-0.5"></iconify-icon>
                                 AI Chatbot on Public Page
                             </li>
                             <li class="flex items-start gap-2">
-                                <iconify-icon icon="lucide:check" class="text-purple-400 mt-0.5"></iconify-icon>
+                                <iconify-icon icon="lucide:check" class="text-purple-600 mt-0.5"></iconify-icon>
                                 Doctor Settlements
                             </li>
                         </ul>
@@ -2219,41 +2266,41 @@
                     
                     <div class="pricing-card">
                         <h3 class="text-xl font-bold mb-2">PRO</h3>
-                        <p class="text-sm text-purple-400 mb-6">For multi-doctor centers</p>
+                        <p class="text-sm text-purple-600 mb-6">For multi-doctor centers</p>
                         <div class="mb-6">
                             <span class="text-4xl font-bold font-mono gradient-text">22,000–24,000</span>
-                            <span class="text-purple-400 ml-2">EGP / year</span>
+                            <span class="text-purple-600 ml-2">EGP / year</span>
                         </div>
-                        <ul class="space-y-3 text-sm text-purple-200/80">
+                        <ul class="space-y-3 text-sm text-purple-900/80">
                             <li class="flex items-start gap-2">
-                                <iconify-icon icon="lucide:check" class="text-purple-400 mt-0.5"></iconify-icon>
+                                <iconify-icon icon="lucide:check" class="text-purple-600 mt-0.5"></iconify-icon>
                                 1 Branch · Unlimited Doctors · Up to 60 Users
                             </li>
                             <li class="flex items-start gap-2">
-                                <iconify-icon icon="lucide:check" class="text-purple-400 mt-0.5"></iconify-icon>
+                                <iconify-icon icon="lucide:check" class="text-purple-600 mt-0.5"></iconify-icon>
                                 <span class="font-medium">Everything in Growth, plus:</span>
                             </li>
                             <li class="flex items-start gap-2">
-                                <iconify-icon icon="lucide:check" class="text-purple-400 mt-0.5"></iconify-icon>
+                                <iconify-icon icon="lucide:check" class="text-purple-600 mt-0.5"></iconify-icon>
                                 Maximum AI usage
                             </li>
                             <li class="flex items-start gap-2">
-                                <iconify-icon icon="lucide:check" class="text-purple-400 mt-0.5"></iconify-icon>
+                                <iconify-icon icon="lucide:check" class="text-purple-600 mt-0.5"></iconify-icon>
                                 Priority Support
                             </li>
                             <li class="flex items-start gap-2">
-                                <iconify-icon icon="lucide:check" class="text-purple-400 mt-0.5"></iconify-icon>
+                                <iconify-icon icon="lucide:check" class="text-purple-600 mt-0.5"></iconify-icon>
                                 Full Admin Console Access
                             </li>
                             <li class="flex items-start gap-2">
-                                <iconify-icon icon="lucide:check" class="text-purple-400 mt-0.5"></iconify-icon>
+                                <iconify-icon icon="lucide:check" class="text-purple-600 mt-0.5"></iconify-icon>
                                 Custom Integrations (on request)
                             </li>
                         </ul>
                     </div>
                 </div>
                 
-                <p class="text-center text-purple-300/70 mt-8 text-sm">
+                <p class="text-center text-purple-800/75 mt-8 text-sm">
                     All plans available in 3-month installments. No interest. No hidden fees.
                 </p>
             </div>
@@ -2270,56 +2317,56 @@
                     We Don't Just Hand You Software.<br>
                     <span class="gradient-text">We Set You Up for Success.</span>
                 </h2>
-                <p class="text-xl text-purple-200/70 mb-12">A structured onboarding process to get you running smoothly.</p>
+                <p class="text-xl text-purple-900/75 mb-12">A structured onboarding process to get you running smoothly.</p>
                 
                 <div class="space-y-6 mb-12">
                     <div class="flex gap-6">
-                        <div class="flex-shrink-0 w-16 h-16 rounded-2xl bg-purple-600/20 border border-purple-500/30 flex items-center justify-center">
+                        <div class="flex-shrink-0 w-16 h-16 rounded-2xl bg-purple-600/20 border border-purple-300 flex items-center justify-center">
                             <span class="text-2xl font-bold font-mono gradient-text">1</span>
                         </div>
                         <div>
-                            <h3 class="text-xl font-semibold mb-2">Setup <span class="text-purple-400 font-normal">— Day 1</span></h3>
-                            <p class="text-purple-200/70">We configure your clinic profile, import your existing patient data (if available), and set up your public booking page.</p>
+                            <h3 class="text-xl font-semibold mb-2">Setup <span class="text-purple-600 font-normal">— Day 1</span></h3>
+                            <p class="text-purple-900/75">We configure your clinic profile, import your existing patient data (if available), and set up your public booking page.</p>
                         </div>
                     </div>
                     
                     <div class="flex gap-6">
-                        <div class="flex-shrink-0 w-16 h-16 rounded-2xl bg-purple-600/20 border border-purple-500/30 flex items-center justify-center">
+                        <div class="flex-shrink-0 w-16 h-16 rounded-2xl bg-purple-600/20 border border-purple-300 flex items-center justify-center">
                             <span class="text-2xl font-bold font-mono gradient-text">2</span>
                         </div>
                         <div>
-                            <h3 class="text-xl font-semibold mb-2">Training <span class="text-purple-400 font-normal">— Day 2-3</span></h3>
-                            <p class="text-purple-200/70">Live walkthrough for you and your receptionist. We cover the daily workflows — not everything, just what matters first.</p>
+                            <h3 class="text-xl font-semibold mb-2">Training <span class="text-purple-600 font-normal">— Day 2-3</span></h3>
+                            <p class="text-purple-900/75">Live walkthrough for you and your receptionist. We cover the daily workflows — not everything, just what matters first.</p>
                         </div>
                     </div>
                     
                     <div class="flex gap-6">
-                        <div class="flex-shrink-0 w-16 h-16 rounded-2xl bg-purple-600/20 border border-purple-500/30 flex items-center justify-center">
+                        <div class="flex-shrink-0 w-16 h-16 rounded-2xl bg-purple-600/20 border border-purple-300 flex items-center justify-center">
                             <span class="text-2xl font-bold font-mono gradient-text">3</span>
                         </div>
                         <div>
-                            <h3 class="text-xl font-semibold mb-2">Go Live <span class="text-purple-400 font-normal">— Day 4</span></h3>
-                            <p class="text-purple-200/70">Your first real day on Medura Hub. We're available on WhatsApp to answer any question within the hour.</p>
+                            <h3 class="text-xl font-semibold mb-2">Go Live <span class="text-purple-600 font-normal">— Day 4</span></h3>
+                            <p class="text-purple-900/75">Your first real day on Medura Hub. We're available on WhatsApp to answer any question within the hour.</p>
                         </div>
                     </div>
                     
                     <div class="flex gap-6">
-                        <div class="flex-shrink-0 w-16 h-16 rounded-2xl bg-purple-600/20 border border-purple-500/30 flex items-center justify-center">
+                        <div class="flex-shrink-0 w-16 h-16 rounded-2xl bg-purple-600/20 border border-purple-300 flex items-center justify-center">
                             <span class="text-2xl font-bold font-mono gradient-text">4</span>
                         </div>
                         <div>
                             <h3 class="text-xl font-semibold mb-2">30-Day Check-In</h3>
-                            <p class="text-purple-200/70">After a month, we review your usage, answer questions, and unlock any features you haven't explored yet.</p>
+                            <p class="text-purple-900/75">After a month, we review your usage, answer questions, and unlock any features you haven't explored yet.</p>
                         </div>
                     </div>
                 </div>
                 
-                <div class="p-8 rounded-2xl bg-gradient-to-r from-purple-600/20 via-purple-500/10 to-purple-600/20 border border-purple-500/40 glow-purple">
+                <div class="p-8 rounded-2xl bg-gradient-to-r from-purple-600/20 via-purple-500/10 to-purple-600/20 border border-purple-300 glow-purple">
                     <div class="flex items-center gap-4">
-                        <iconify-icon icon="lucide:shield-check" class="text-4xl text-purple-400"></iconify-icon>
+                        <iconify-icon icon="lucide:shield-check" class="text-4xl text-purple-600"></iconify-icon>
                         <div>
                             <h3 class="text-xl font-bold mb-1">30-Day Money-Back Guarantee</h3>
-                            <p class="text-purple-200/80">Not happy after 30 days? Full refund. No questions asked.</p>
+                            <p class="text-purple-900/80">Not happy after 30 days? Full refund. No questions asked.</p>
                         </div>
                     </div>
                 </div>
@@ -2341,66 +2388,66 @@
                 <div class="grid md:grid-cols-3 gap-6">
                     <div class="gradient-border rounded-2xl p-8 card-hover">
                         <div class="flex gap-1 mb-4">
-                            <iconify-icon icon="lucide:star" class="text-purple-400"></iconify-icon>
-                            <iconify-icon icon="lucide:star" class="text-purple-400"></iconify-icon>
-                            <iconify-icon icon="lucide:star" class="text-purple-400"></iconify-icon>
-                            <iconify-icon icon="lucide:star" class="text-purple-400"></iconify-icon>
-                            <iconify-icon icon="lucide:star" class="text-purple-400"></iconify-icon>
+                            <iconify-icon icon="lucide:star" class="text-purple-600"></iconify-icon>
+                            <iconify-icon icon="lucide:star" class="text-purple-600"></iconify-icon>
+                            <iconify-icon icon="lucide:star" class="text-purple-600"></iconify-icon>
+                            <iconify-icon icon="lucide:star" class="text-purple-600"></iconify-icon>
+                            <iconify-icon icon="lucide:star" class="text-purple-600"></iconify-icon>
                         </div>
-                        <p class="text-purple-100/90 mb-6 italic">"Before Medura Hub, I spent 45 minutes every evening typing up my notes. Now it takes 10. The AI dictation alone paid for the subscription."</p>
-                        <div class="flex items-center gap-3 pt-4 border-t border-purple-500/20">
+                        <p class="text-purple-950/90 mb-6 italic">"Before Medura Hub, I spent 45 minutes every evening typing up my notes. Now it takes 10. The AI dictation alone paid for the subscription."</p>
+                        <div class="flex items-center gap-3 pt-4 border-t border-purple-200">
                             <div class="w-10 h-10 rounded-full bg-purple-600/30 flex items-center justify-center">
-                                <span class="text-sm font-bold text-purple-300">Dr.</span>
+                                <span class="text-sm font-bold text-purple-700">Dr.</span>
                             </div>
                             <div>
                                 <p class="font-semibold text-sm">Dr. [Name]</p>
-                                <p class="text-xs text-purple-400">General Practitioner, Cairo</p>
+                                <p class="text-xs text-purple-600">General Practitioner, Cairo</p>
                             </div>
                         </div>
                     </div>
                     
                     <div class="gradient-border rounded-2xl p-8 card-hover">
                         <div class="flex gap-1 mb-4">
-                            <iconify-icon icon="lucide:star" class="text-purple-400"></iconify-icon>
-                            <iconify-icon icon="lucide:star" class="text-purple-400"></iconify-icon>
-                            <iconify-icon icon="lucide:star" class="text-purple-400"></iconify-icon>
-                            <iconify-icon icon="lucide:star" class="text-purple-400"></iconify-icon>
-                            <iconify-icon icon="lucide:star" class="text-purple-400"></iconify-icon>
+                            <iconify-icon icon="lucide:star" class="text-purple-600"></iconify-icon>
+                            <iconify-icon icon="lucide:star" class="text-purple-600"></iconify-icon>
+                            <iconify-icon icon="lucide:star" class="text-purple-600"></iconify-icon>
+                            <iconify-icon icon="lucide:star" class="text-purple-600"></iconify-icon>
+                            <iconify-icon icon="lucide:star" class="text-purple-600"></iconify-icon>
                         </div>
-                        <p class="text-purple-100/90 mb-6 italic">"The dental module is exactly what I needed. The odontogram is better than software that costs 3× more. And the treatment plan tracking has changed how I communicate with patients."</p>
-                        <div class="flex items-center gap-3 pt-4 border-t border-purple-500/20">
+                        <p class="text-purple-950/90 mb-6 italic">"The dental module is exactly what I needed. The odontogram is better than software that costs 3× more. And the treatment plan tracking has changed how I communicate with patients."</p>
+                        <div class="flex items-center gap-3 pt-4 border-t border-purple-200">
                             <div class="w-10 h-10 rounded-full bg-purple-600/30 flex items-center justify-center">
-                                <span class="text-sm font-bold text-purple-300">Dr.</span>
+                                <span class="text-sm font-bold text-purple-700">Dr.</span>
                             </div>
                             <div>
                                 <p class="font-semibold text-sm">Dr. [Name]</p>
-                                <p class="text-xs text-purple-400">Dental Specialist, Alexandria</p>
+                                <p class="text-xs text-purple-600">Dental Specialist, Alexandria</p>
                             </div>
                         </div>
                     </div>
                     
                     <div class="gradient-border rounded-2xl p-8 card-hover">
                         <div class="flex gap-1 mb-4">
-                            <iconify-icon icon="lucide:star" class="text-purple-400"></iconify-icon>
-                            <iconify-icon icon="lucide:star" class="text-purple-400"></iconify-icon>
-                            <iconify-icon icon="lucide:star" class="text-purple-400"></iconify-icon>
-                            <iconify-icon icon="lucide:star" class="text-purple-400"></iconify-icon>
-                            <iconify-icon icon="lucide:star" class="text-purple-400"></iconify-icon>
+                            <iconify-icon icon="lucide:star" class="text-purple-600"></iconify-icon>
+                            <iconify-icon icon="lucide:star" class="text-purple-600"></iconify-icon>
+                            <iconify-icon icon="lucide:star" class="text-purple-600"></iconify-icon>
+                            <iconify-icon icon="lucide:star" class="text-purple-600"></iconify-icon>
+                            <iconify-icon icon="lucide:star" class="text-purple-600"></iconify-icon>
                         </div>
-                        <p class="text-purple-100/90 mb-6 italic">"Managing 4 doctors and their revenue shares was my biggest headache. Now I generate the settlement report in one click. No more WhatsApp arguments at the end of the month."</p>
-                        <div class="flex items-center gap-3 pt-4 border-t border-purple-500/20">
+                        <p class="text-purple-950/90 mb-6 italic">"Managing 4 doctors and their revenue shares was my biggest headache. Now I generate the settlement report in one click. No more WhatsApp arguments at the end of the month."</p>
+                        <div class="flex items-center gap-3 pt-4 border-t border-purple-200">
                             <div class="w-10 h-10 rounded-full bg-purple-600/30 flex items-center justify-center">
-                                <span class="text-sm font-bold text-purple-300">Dr.</span>
+                                <span class="text-sm font-bold text-purple-700">Dr.</span>
                             </div>
                             <div>
                                 <p class="font-semibold text-sm">Dr. [Name]</p>
-                                <p class="text-xs text-purple-400">Polyclinic Owner, Giza</p>
+                                <p class="text-xs text-purple-600">Polyclinic Owner, Giza</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <p class="text-center text-purple-400/60 text-sm mt-8 italic">[Replace with real testimonials before going live. Use doctor's photo + name + clinic for maximum credibility.]</p>
+                <p class="text-center text-purple-600/60 text-sm mt-8 italic">[Replace with real testimonials before going live. Use doctor's photo + name + clinic for maximum credibility.]</p>
             </div>
         </div>
 
@@ -2418,33 +2465,33 @@
                 
                 <div class="space-y-6">
                     <div class="gradient-border rounded-xl p-6">
-                        <h3 class="font-semibold text-lg mb-3 text-purple-300">Q: Is my patient data safe?</h3>
-                        <p class="text-purple-200/70">A: Yes. We use Supabase PostgreSQL with row-level security — each clinic's data is isolated at the database level. Files are stored on Cloudflare R2 with access-controlled URLs.</p>
+                        <h3 class="font-semibold text-lg mb-3 text-purple-700">Q: Is my patient data safe?</h3>
+                        <p class="text-purple-900/75">A: Yes. We use Supabase PostgreSQL with row-level security — each clinic's data is isolated at the database level. Files are stored on Cloudflare R2 with access-controlled URLs.</p>
                     </div>
                     
                     <div class="gradient-border rounded-xl p-6">
-                        <h3 class="font-semibold text-lg mb-3 text-purple-300">Q: What if I already have patient records somewhere else?</h3>
-                        <p class="text-purple-200/70">A: We'll help you migrate. Most clinics have Excel files or old system exports — we handle the import as part of onboarding.</p>
+                        <h3 class="font-semibold text-lg mb-3 text-purple-700">Q: What if I already have patient records somewhere else?</h3>
+                        <p class="text-purple-900/75">A: We'll help you migrate. Most clinics have Excel files or old system exports — we handle the import as part of onboarding.</p>
                     </div>
                     
                     <div class="gradient-border rounded-xl p-6">
-                        <h3 class="font-semibold text-lg mb-3 text-purple-300">Q: What happens if the internet goes down?</h3>
-                        <p class="text-purple-200/70">A: Medura Hub is web-based. Internet is required for real-time features. However, the platform is designed for minimal latency, and a mobile hotspot is more than enough.</p>
+                        <h3 class="font-semibold text-lg mb-3 text-purple-700">Q: What happens if the internet goes down?</h3>
+                        <p class="text-purple-900/75">A: Medura Hub is web-based. Internet is required for real-time features. However, the platform is designed for minimal latency, and a mobile hotspot is more than enough.</p>
                     </div>
                     
                     <div class="gradient-border rounded-xl p-6">
-                        <h3 class="font-semibold text-lg mb-3 text-purple-300">Q: Can I add more doctors later?</h3>
-                        <p class="text-purple-200/70">A: Yes. Add doctors at any time. Billing adjusts based on your plan.</p>
+                        <h3 class="font-semibold text-lg mb-3 text-purple-700">Q: Can I add more doctors later?</h3>
+                        <p class="text-purple-900/75">A: Yes. Add doctors at any time. Billing adjusts based on your plan.</p>
                     </div>
                     
                     <div class="gradient-border rounded-xl p-6">
-                        <h3 class="font-semibold text-lg mb-3 text-purple-300">Q: I'm not tech-savvy. Is this hard to learn?</h3>
-                        <p class="text-purple-200/70">A: The most common feedback from receptionists: "It's easier than I expected." We'll train you and your team before you go live.</p>
+                        <h3 class="font-semibold text-lg mb-3 text-purple-700">Q: I'm not tech-savvy. Is this hard to learn?</h3>
+                        <p class="text-purple-900/75">A: The most common feedback from receptionists: "It's easier than I expected." We'll train you and your team before you go live.</p>
                     </div>
                     
                     <div class="gradient-border rounded-xl p-6">
-                        <h3 class="font-semibold text-lg mb-3 text-purple-300">Q: What's the minimum commitment?</h3>
-                        <p class="text-purple-200/70">A: Annual plans only. But with a 30-day full refund, you have a risk-free first month to evaluate.</p>
+                        <h3 class="font-semibold text-lg mb-3 text-purple-700">Q: What's the minimum commitment?</h3>
+                        <p class="text-purple-900/75">A: Annual plans only. But with a 30-day full refund, you have a risk-free first month to evaluate.</p>
                     </div>
                 </div>
             </div>
@@ -2463,21 +2510,21 @@
                 </h2>
                 
                 <div class="space-y-6 mb-12">
-                    <p class="text-xl text-purple-100/90">Let's be direct.</p>
+                    <p class="text-xl text-purple-950/90">Let's be direct.</p>
                     
-                    <p class="text-lg text-purple-200/80">You've been losing <span class="text-white font-semibold">2 hours per day</span> to manual tasks. That's <span class="text-white font-semibold">40 hours per month</span>. At your consultation rate, that's money left on the table — every single month.</p>
+                    <p class="text-lg text-purple-900/80">You've been losing <span class="text-white font-semibold">2 hours per day</span> to manual tasks. That's <span class="text-white font-semibold">40 hours per month</span>. At your consultation rate, that's money left on the table — every single month.</p>
                     
-                    <div class="p-8 rounded-2xl bg-gradient-to-r from-purple-600/20 via-purple-500/10 to-purple-600/20 border border-purple-500/40">
-                        <p class="text-purple-100 text-center text-lg mb-4">The software pays for itself if it saves you just</p>
+                    <div class="p-8 rounded-2xl bg-gradient-to-r from-purple-600/20 via-purple-500/10 to-purple-600/20 border border-purple-300">
+                        <p class="text-purple-950 text-center text-lg mb-4">The software pays for itself if it saves you just</p>
                         <p class="text-5xl font-bold font-mono gradient-text text-center mb-4">3 extra consultations per month.</p>
-                        <p class="text-purple-200/70 text-center">At the Growth plan (15,000 EGP/year), that's <span class="text-purple-300 font-semibold">1,250 EGP/month.</span></p>
+                        <p class="text-purple-900/75 text-center">At the Growth plan (15,000 EGP/year), that's <span class="text-purple-700 font-semibold">1,250 EGP/month.</span></p>
                     </div>
                     
-                    <p class="text-lg text-purple-200/80">If your average consultation fee is 300–500 EGP, <span class="text-white font-semibold">you break even in 3–4 extra patients.</span></p>
+                    <p class="text-lg text-purple-900/80">If your average consultation fee is 300–500 EGP, <span class="text-white font-semibold">you break even in 3–4 extra patients.</span></p>
                 </div>
                 
-                <div class="p-10 rounded-2xl border-2 border-purple-500/50 bg-gradient-to-br from-purple-900/40 to-transparent">
-                    <p class="text-lg text-purple-200/80 text-center mb-4">THE REAL QUESTION ISN'T COST. IT'S:</p>
+                <div class="p-10 rounded-2xl border-2 border-purple-400 bg-gradient-to-br from-purple-900/40 to-transparent">
+                    <p class="text-lg text-purple-900/80 text-center mb-4">THE REAL QUESTION ISN'T COST. IT'S:</p>
                     <p class="text-3xl font-serif text-center gradient-text font-bold">
                         "Can you afford another month of the old way?"
                     </p>
@@ -2501,48 +2548,48 @@
                     <path class="pulse-trace" d="M0,60 H170 L192,66 L206,18 L226,104 L244,54 L262,64 H340 L356,50 L370,72 L384,60 H600"/>
                 </svg>
 
-                <p class="text-xl text-purple-200/80 mb-12 max-w-2xl">
+                <p class="text-xl text-purple-900/80 mb-12 max-w-2xl">
                     Start your 14-day free trial. No credit card required. We'll set everything up.
                 </p>
                 
                 <div class="grid md:grid-cols-3 gap-6 max-w-4xl w-full mb-16">
                     <div class="gradient-border rounded-2xl p-8 card-hover">
-                        <iconify-icon icon="lucide:play-circle" class="text-4xl text-purple-400 mb-4"></iconify-icon>
+                        <iconify-icon icon="lucide:play-circle" class="text-4xl text-purple-600 mb-4"></iconify-icon>
                         <h3 class="font-bold text-lg mb-2">Free Trial</h3>
-                        <p class="text-sm text-purple-200/70">14 days, full access. We onboard you personally.</p>
+                        <p class="text-sm text-purple-900/75">14 days, full access. We onboard you personally.</p>
                     </div>
                     
-                    <div class="gradient-border rounded-2xl p-8 card-hover border-purple-500/40 bg-purple-900/20">
-                        <iconify-icon icon="lucide:monitor-play" class="text-4xl text-purple-400 mb-4"></iconify-icon>
+                    <div class="gradient-border rounded-2xl p-8 card-hover border-purple-300 bg-purple-100/80">
+                        <iconify-icon icon="lucide:monitor-play" class="text-4xl text-purple-600 mb-4"></iconify-icon>
                         <h3 class="font-bold text-lg mb-2">Live Demo</h3>
-                        <p class="text-sm text-purple-200/70">30-minute walkthrough with a real demo account.</p>
+                        <p class="text-sm text-purple-900/75">30-minute walkthrough with a real demo account.</p>
                     </div>
                     
                     <div class="gradient-border rounded-2xl p-8 card-hover">
-                        <iconify-icon icon="lucide:message-circle" class="text-4xl text-purple-400 mb-4"></iconify-icon>
+                        <iconify-icon icon="lucide:message-circle" class="text-4xl text-purple-600 mb-4"></iconify-icon>
                         <h3 class="font-bold text-lg mb-2">Talk to a Human</h3>
-                        <p class="text-sm text-purple-200/70">Call or WhatsApp us. We'll answer every question.</p>
+                        <p class="text-sm text-purple-900/75">Call or WhatsApp us. We'll answer every question.</p>
                     </div>
                 </div>
                 
-                <div class="flex flex-wrap justify-center gap-8 text-purple-300">
+                <div class="flex flex-wrap justify-center gap-8 text-purple-700">
                     <div class="flex items-center gap-2">
-                        <iconify-icon icon="lucide:smartphone" class="text-purple-400"></iconify-icon>
+                        <iconify-icon icon="lucide:smartphone" class="text-purple-600"></iconify-icon>
                         WhatsApp: [Your Number]
                     </div>
                     <div class="flex items-center gap-2">
-                        <iconify-icon icon="lucide:globe" class="text-purple-400"></iconify-icon>
+                        <iconify-icon icon="lucide:globe" class="text-purple-600"></iconify-icon>
                         Website: [Your URL]
                     </div>
                     <div class="flex items-center gap-2">
-                        <iconify-icon icon="lucide:mail" class="text-purple-400"></iconify-icon>
+                        <iconify-icon icon="lucide:mail" class="text-purple-600"></iconify-icon>
                         Email: [Your Email]
                     </div>
                 </div>
                 
-                <div class="mt-16 pt-8 border-t border-purple-500/20 w-full max-w-2xl">
-                    <p class="text-lg font-medium text-purple-200/80">Medura Hub — The Operating System for Modern Clinics.</p>
-                    <p class="text-sm text-purple-400/60 mt-2">Bilingual · AI-Powered · Trusted by Doctors Across Egypt</p>
+                <div class="mt-16 pt-8 border-t border-purple-200 w-full max-w-2xl">
+                    <p class="text-lg font-medium text-purple-900/80">Medura Hub — The Operating System for Modern Clinics.</p>
+                    <p class="text-sm text-purple-600/60 mt-2">Bilingual · AI-Powered · Trusted by Doctors Across Egypt</p>
                 </div>
             </div>
         </div>
@@ -2620,15 +2667,15 @@
             
             // Reset active tabs classes
             tabs.forEach(tab => {
-                tab.classList.remove('bg-purple-600/30', 'border-purple-500/50', 'text-white', 'font-medium', 'shadow-md');
-                tab.classList.add('bg-neutral-900/40', 'border-neutral-800', 'text-purple-300/70');
+                tab.classList.remove('bg-purple-600/30', 'border-purple-400', 'text-white', 'font-medium', 'shadow-md');
+                tab.classList.add('bg-neutral-900/40', 'border-neutral-800', 'text-purple-800/75');
             });
             
             // Set active class to selected tab
             const activeTab = document.getElementById(`mockup-tab-${variant}`);
             if (activeTab) {
-                activeTab.classList.remove('bg-neutral-900/40', 'border-neutral-800', 'text-purple-300/70');
-                activeTab.classList.add('bg-purple-600/30', 'border-purple-500/50', 'text-white', 'font-medium', 'shadow-md');
+                activeTab.classList.remove('bg-neutral-900/40', 'border-neutral-800', 'text-purple-800/75');
+                activeTab.classList.add('bg-purple-600/30', 'border-purple-400', 'text-white', 'font-medium', 'shadow-md');
             }
             
             // Update images and visibility
@@ -2701,15 +2748,15 @@
             
             // Reset active tabs classes
             tabs.forEach(tab => {
-                tab.classList.remove('bg-purple-600/30', 'border-purple-500/50', 'text-white', 'font-medium', 'shadow-md');
-                tab.classList.add('bg-neutral-900/40', 'border-neutral-800', 'text-purple-300/70');
+                tab.classList.remove('bg-purple-600/30', 'border-purple-400', 'text-white', 'font-medium', 'shadow-md');
+                tab.classList.add('bg-neutral-900/40', 'border-neutral-800', 'text-purple-800/75');
             });
             
             // Set active class to selected tab
             const activeTab = document.getElementById(`reception-mockup-tab-${variant}`);
             if (activeTab) {
-                activeTab.classList.remove('bg-neutral-900/40', 'border-neutral-800', 'text-purple-300/70');
-                activeTab.classList.add('bg-purple-600/30', 'border-purple-500/50', 'text-white', 'font-medium', 'shadow-md');
+                activeTab.classList.remove('bg-neutral-900/40', 'border-neutral-800', 'text-purple-800/75');
+                activeTab.classList.add('bg-purple-600/30', 'border-purple-400', 'text-white', 'font-medium', 'shadow-md');
             }
             
             // Update images and visibility
